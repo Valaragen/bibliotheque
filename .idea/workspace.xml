@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2bd5982-0eda-47f1-b5e9-d8bc98f53802" name="Default Changelist" comment="" />
+    <list default="true" id="e2bd5982-0eda-47f1-b5e9-d8bc98f53802" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_29.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_29.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_29.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_18_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_2_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_2_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_2_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_2_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/controller/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/model/Borrow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/model/common/AbstractEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/repository/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/util/Constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webui/src/main/java/com/rudy/bibliotheque/webui/controller/NavigationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webui/src/main/resources/templates/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/microservice-ouvrage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-ouvrage/microservice-ouvrage.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-ouvrage/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/MOuvrageApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/controller/OuvrageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/model/Ouvrage.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/repository/OuvrageRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/service/OuvrageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-ouvrage/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webui/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webui/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +55,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1WEFV7ZqQC9OKmt3i9KUubdLWHj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/microservice-ouvrage/src/main/resources" />
@@ -52,14 +101,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.WebuiApplication">
-    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="microservice-ouvrage" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rudy.biliotheque.mouvrage.App" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.microservice-ouvrage">
     <configuration name="WebuiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="webui" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rudy.bibliotheque.webui.WebuiApplication" />
@@ -67,12 +109,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="microservice-ouvrage" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="microservice-ouvrage" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rudy.biliotheque.mouvrage.MOuvrageApp" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.microservice-ouvrage" />
+      <item itemvalue="Spring Boot.WebuiApplication" />
+    </list>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@47bde451" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@47bde451" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3097dde0" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@47bde451" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@274032e4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -88,11 +157,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578706868477</updated>
-      <workItem from="1578706874931" duration="4757000" />
+      <workItem from="1578706874931" duration="4848000" />
+      <workItem from="1578746157587" duration="5024000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
