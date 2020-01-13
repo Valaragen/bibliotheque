@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservice-book/microservice-ouvrage.iml" filepath="$PROJECT_DIR$/microservice-book/microservice-ouvrage.iml" />
       <module fileurl="file://$PROJECT_DIR$/webui/webui.iml" filepath="$PROJECT_DIR$/webui/webui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul-server/zuul-server.iml" filepath="$PROJECT_DIR$/zuul-server/zuul-server.iml" />
     </modules>
   </component>
 </project>

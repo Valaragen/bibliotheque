@@ -2,73 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bd5982-0eda-47f1-b5e9-d8bc98f53802" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config-server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/main/java/com/rudy/bibliotheque/configserver/ConfigServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/test/java/com/rudy/bibliotheque/configserver/ConfigServerApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/src/main/java/com/rudy/bibliotheque/eurekaserver/EurekaServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/src/test/java/com/rudy/bibliotheque/eurekaserver/EurekaServerApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/config/ApplicationPropertiesConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-book/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webui/src/main/java/com/rudy/bibliotheque/webui/beans/BookBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webui/src/main/java/com/rudy/bibliotheque/webui/config/FeignConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webui/src/main/java/com/rudy/bibliotheque/webui/proxies/MicroserviceBookProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/ZuulServerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/filters/LogFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/src/test/java/com/rudy/bibliotheque/zuulserver/ZuulServerApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_16.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_2_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_transaction_jakarta_transaction_api_1_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_9_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_1_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_2_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_2_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_2_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_2_3_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_2_3_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_2_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_2_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_2_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/microservice-ouvrage.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/MOuvrageApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/MBookApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/model/Borrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/Borrow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/model/common/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/common/AbstractEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/repository/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/java/com/rudy/biliotheque/mouvrage/util/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/util/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-ouvrage/src/test/java/com/rudy/biliotheque/mouvrage/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/test/java/com/rudy/biliotheque/mbook/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webui/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webui/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-book/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webui/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +51,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/eureka-server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/zuul-server" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -108,6 +63,9 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.rudy.bibliotheque.webui.beans" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Openclassroom\7-\bibliotheque\microservice-ouvrage\src\main\resources" />
     </key>
@@ -129,7 +87,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
+  <component name="RunManager" selected="Spring Boot.ZuulServerApplication">
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rudy.bibliotheque.configserver.ConfigServerApplication" />
@@ -158,11 +116,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ZuulServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zuul-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rudy.bibliotheque.zuulserver.ZuulServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Spring Boot.WebuiApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.MBookApp" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.ZuulServerApplication" />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -178,11 +144,6 @@
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@e48d7112" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4d1e4c4d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@e48d7112" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ae1abfac" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -204,7 +165,7 @@
       <workItem from="1578746157587" duration="5420000" />
       <workItem from="1578757259463" duration="575000" />
       <workItem from="1578785626280" duration="1659000" />
-      <workItem from="1578853421778" duration="7763000" />
+      <workItem from="1578853421778" duration="11254000" />
     </task>
     <servers />
   </component>
