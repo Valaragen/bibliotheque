@@ -21,7 +21,7 @@ public class Borrow extends AbstractEntity {
     @ManyToOne
     private User user;
 
-    private Boolean hasDurationExtended;
+    private Boolean hasDurationExtended = false;
 
     @UpdateTimestamp
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")

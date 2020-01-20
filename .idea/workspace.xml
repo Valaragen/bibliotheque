@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bd5982-0eda-47f1-b5e9-d8bc98f53802" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/common/AbstractEntityComposedId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-book/src/main/resources/db/changelog/db.changelog-0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-book/src/main/resources/db/changelog/db.changelog-master.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repository/microservice-book.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-repository/microservice-book.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-book/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/Borrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/Borrow.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +37,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/zuul-server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config-repository" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,7 +74,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ZuulServerApplication">
+  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rudy.bibliotheque.configserver.ConfigServerApplication" />
@@ -120,12 +125,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@e48d7112" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@60fe7fa3" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@e48d7112" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3fa53db7" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@60fe7fa3" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@45600233" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -150,7 +155,7 @@
       <workItem from="1578853421778" duration="12717000" />
       <workItem from="1578909622186" duration="2701000" />
       <workItem from="1579345816519" duration="2948000" />
-      <workItem from="1579450134708" duration="2396000" />
+      <workItem from="1579450134708" duration="7758000" />
     </task>
     <servers />
   </component>
