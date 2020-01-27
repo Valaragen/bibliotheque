@@ -1,7 +1,0 @@
-Bonjour $name,
-
-Vous avez empreinté le livre $bookName le $beginDate
-Votre livre était attendu à la bibliotheque le $endDate
-Merci de le ramener dès que possible.
-
-Cordialement.

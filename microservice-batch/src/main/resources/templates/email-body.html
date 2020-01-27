@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:remove="all">Template for HTML email with inline image</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="'Bonjour ' + ${username} + ','">
+    Bonjour, Peter Static!
+</p>
+
+<p>
+    Nous attendions le retour du livre '<strong th:text="${bookName}"></strong>' le <strong th:text="${#dates.format(loanEndDate, 'dd-MM-yyyy')}">2020-01-01</strong><br/>
+    Nous vous prions de le ramener à la bibliotheque au plus vite.
+</p>
+
+<p>
+    Cordialement, <br />
+    La bibliothèque
+</p>
+</body>
+</html>
