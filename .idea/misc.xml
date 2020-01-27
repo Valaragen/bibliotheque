@@ -5,10 +5,11 @@
       <list>
         <option value="$PROJECT_DIR$/microservice-ouvrage/pom.xml" />
         <option value="$PROJECT_DIR$/webui/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice-book/pom.xml" />
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/zuul-server/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-book/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-batch/pom.xml" />
       </list>
     </option>
   </component>

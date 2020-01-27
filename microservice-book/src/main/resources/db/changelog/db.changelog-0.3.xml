@@ -1,0 +1,100 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="mbook-001" author="rudy Boinnard">
+        <comment>Insert two users</comment>
+        <insert tableName="_user">
+            <column name="first_name" value="rudy" />
+            <column name="last_name" value="boinnard" />
+            <column name="email" value="rudy@gmail.com" />
+            <column name="username" value="valaragen" />
+            <column name="encrypted_password"
+                    value="$2a$10$3Yftm0X5p5kfGK74Vq5I4.uU6q/8XMfs.YOa2Ch0pKW5j7qQDFLCW" />
+            <column name="version" value="0" />
+        </insert>
+
+        <insert tableName="_user">
+            <column name="first_name" value="thomas" />
+            <column name="last_name" value="gasmyr" />
+            <column name="email" value="gasmyrmougang@yahoo.fr" />
+            <column name="username" value="user" />
+            <column name="encrypted_password"
+                    value="$2a$10$3Yftm0X5p5kfGK74Vq5I4.uU6q/8XMfs.YOa2Ch0pKW5j7qQDFLCW" />
+            <column name="version" value="0" />
+        </insert>
+
+        <insert tableName="_user">
+            <column name="first_name" value="bob" />
+            <column name="last_name" value="gil" />
+            <column name="email" value="gilbob@yahoo.fr" />
+            <column name="username" value="staff" />
+            <column name="encrypted_password"
+                    value="$2a$10$3Yftm0X5p5kfGK74Vq5I4.uU6q/8XMfs.YOa2Ch0pKW5j7qQDFLCW" />
+            <column name="version" value="0" />
+        </insert>
+    </changeSet>
+
+    <changeSet id="mbook-002" author="rudy boinnard">
+
+        <comment>Add admin role and user role to previously created users</comment>
+        <insert tableName="user_role">
+            <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='valaragen')" />
+            <column name="role_id" valueComputed="(SELECT id FROM _role WHERE name='ROLE_ADMIN')" />
+        </insert>
+        <insert tableName="user_role">
+            <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='valaragen')" />
+            <column name="role_id" valueComputed="(SELECT id FROM _role WHERE name='ROLE_STAFF')" />
+        </insert>
+        <insert tableName="user_role">
+            <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='valaragen')" />
+            <column name="role_id" valueComputed="(SELECT id FROM _role WHERE name='ROLE_USER')" />
+        </insert>
+        <insert tableName="user_role">
+            <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='staff')" />
+            <column name="role_id" valueComputed="(SELECT id FROM _role WHERE name='ROLE_STAFF')" />
+        </insert>
+        <insert tableName="user_role">
+            <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='staff')" />
+            <column name="role_id" valueComputed="(SELECT id FROM _role WHERE name='ROLE_USER')" />
+        </insert>
+        <insert tableName="user_role">
+            <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='user')" />
+            <column name="role_id" valueComputed="(SELECT id FROM _role WHERE name='ROLE_USER')" />
+        </insert>
+    </changeSet>
+
+    <changeSet id="mbook-003" author="rudy boinnard">
+        <comment>Add sample books</comment>
+        <insert tableName="book">
+            <column name="version" value="1"/>
+            <column name="name" value="la patte du loup"/>
+            <column name="description" value="Une histoire touchante"/>
+            <column name="author" value="Franck"/>
+            <column name="release_date" valueDate="2019-11-19"/>
+            <column name="copy_number" value="10"/>
+            <column name="available_copy_number" value="10"/>
+        </insert>
+        <insert tableName="book">
+            <column name="version" value="1"/>
+            <column name="name" value="Une longue journée"/>
+            <column name="description" value="La biographie de Marcel"/>
+            <column name="author" value="Ally"/>
+            <column name="release_date" valueDate="2019-11-19"/>
+            <column name="copy_number" value="5"/>
+            <column name="available_copy_number" value="5"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="mbook-004" author="rudy boinnard">
+        <comment>Add an expired borrow</comment>
+        <insert tableName="borrow">
+            <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='valaragen')" />
+            <column name="book_id" valueComputed="(SELECT id FROM book WHERE name='la patte du loup')" />
+            <column name="hasDurationExtended" valueBoolean="false"/>
+            <column name="loanStartDate" valueDate="2020-01-01"/>
+            <column name="loanEndDate" valueDate="2020-01-14"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
