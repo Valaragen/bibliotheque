@@ -1,7 +1,7 @@
 package com.rudy.bibliotheque.batch.model;
 
-import com.rudy.bibliotheque.mbook.model.common.AbstractEntity;
-import com.rudy.bibliotheque.mbook.util.Constant;
+import com.rudy.bibliotheque.batch.model.common.AbstractEntity;
+import com.rudy.bibliotheque.batch.util.Constant;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;

@@ -23,11 +23,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.data.domain.Sort;
 
 import javax.mail.internet.MimeMessage;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Configuration
 @EnableBatchProcessing
@@ -45,12 +44,6 @@ public class BatchConfiguration {
     @Value("${spring.mail.username}")
     private String sender;
 
-    @Value("${config.batch.data}")
-    public String data;
-
-    @Value("${config.batch.attachment}")
-    private String attachment;
-
     @Value("${config.batch.notifications.email}")
     private String email;
 
@@ -65,13 +58,15 @@ public class BatchConfiguration {
         Date date = new java.sql.Date(millis);
         param.add(date);
         reader.setArguments(param);
-
+        Map<String, Sort.Direction> sort = new HashMap<String, Sort.Direction>();
+        sort.put("id", Sort.Direction.ASC);
+        reader.setSort(sort);
         return reader;
     }
 
     @Bean
     public BorrowItemProcessor processor() {
-        return new BorrowItemProcessor(sender, attachment);
+        return new BorrowItemProcessor(sender);
     }
 
     @Bean

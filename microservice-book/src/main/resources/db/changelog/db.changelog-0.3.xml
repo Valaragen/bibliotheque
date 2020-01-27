@@ -8,7 +8,7 @@
         <insert tableName="_user">
             <column name="first_name" value="rudy" />
             <column name="last_name" value="boinnard" />
-            <column name="email" value="rudy@gmail.com" />
+            <column name="email" value="rudy.boinnard@gmail.com" />
             <column name="username" value="valaragen" />
             <column name="encrypted_password"
                     value="$2a$10$3Yftm0X5p5kfGK74Vq5I4.uU6q/8XMfs.YOa2Ch0pKW5j7qQDFLCW" />
@@ -92,9 +92,9 @@
         <insert tableName="borrow">
             <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='valaragen')" />
             <column name="book_id" valueComputed="(SELECT id FROM book WHERE name='la patte du loup')" />
-            <column name="hasDurationExtended" valueBoolean="false"/>
-            <column name="loanStartDate" valueDate="2020-01-01"/>
-            <column name="loanEndDate" valueDate="2020-01-14"/>
+            <column name="has_duration_extended" valueBoolean="false"/>
+            <column name="loan_start_date" valueDate="2020-01-01"/>
+            <column name="loan_end_date" valueDate="2020-01-14"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

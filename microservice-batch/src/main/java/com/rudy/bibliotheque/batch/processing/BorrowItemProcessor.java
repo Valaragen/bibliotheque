@@ -5,7 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
@@ -22,11 +21,9 @@ public class BorrowItemProcessor implements ItemProcessor<Borrow, MimeMessage> {
     private JavaMailSender mailSender;
 
     private String sender;
-    private String attachment;
 
-    public BorrowItemProcessor(String sender, String attachment) {
+    public BorrowItemProcessor(String sender) {
         this.sender = sender;
-        this.attachment = attachment;
     }
 
     @Override
@@ -42,9 +39,6 @@ public class BorrowItemProcessor implements ItemProcessor<Borrow, MimeMessage> {
         helper.setText("You just received a test message");
 
         log.info("Preparing message for: " + borrow.getUser().getEmail());
-
-        FileSystemResource file = new FileSystemResource(attachment);
-        helper.addAttachment(file.getFilename(), file);
 
         return message;
     }

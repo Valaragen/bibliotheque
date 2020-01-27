@@ -2,69 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bd5982-0eda-47f1-b5e9-d8bc98f53802" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/microservice-batch/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/MicroserviceBatchApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/config/BatchConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Borrow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/common/AbstractEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/common/AbstractEntityComposedId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/processing/BorrowItemProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/processing/JobCompletionNotificationListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/processing/MailBatchItemWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/repository/BookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/repository/BorrowRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/resources/template/email-body.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/resources/template/email-subject.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/test/java/com/rudy/bibliotheque/batch/MicroserviceBatchApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-book/src/main/resources/db/changelog/db.changelog-0.2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-book/src/main/resources/db/changelog/db.changelog-0.3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-book/src/main/resources/liquibase/liquibase-outputChangeLog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-book/src/main/resources/liquibase/liquibase.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/common/AbstractEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/common/AbstractEntityComposedId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/service/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/util/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bibliotheque-config/microservice-book.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../bibliotheque-config/microservice-book.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/util/Constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/Borrow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/MBookApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/MicroserviceBookApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/config/ApplicationPropertiesConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/config/ApplicationPropertiesConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/Borrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/model/Borrow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/common/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/model/common/AbstractEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/model/common/AbstractEntityComposedId.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/model/common/AbstractEntityComposedId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/repository/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/biliotheque/mbook/util/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/util/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/resources/bootstrap.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/resources/db/changelog/db.changelog-0.1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/resources/db/changelog/db.changelog-0.1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/resources/db/changelog/db.changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/resources/db/changelog/db.changelog-master.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/test/java/com/rudy/biliotheque/mbook/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/test/java/com/rudy/bibliotheque/mbook/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zuul-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zuul-server/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-server/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/config/BatchConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/config/BatchConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Borrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Borrow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/common/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/common/AbstractEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/common/AbstractEntityComposedId.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/common/AbstractEntityComposedId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/processing/BorrowItemProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/processing/BorrowItemProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/repository/BorrowRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/repository/BorrowRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/resources/db/changelog/db.changelog-0.3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/resources/db/changelog/db.changelog-0.3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/common/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/common/AbstractEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/common/AbstractEntityComposedId.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/model/common/AbstractEntityComposedId.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,14 +63,6 @@
         <item name="MBOOK_DB: database" type="162271b6:PgImplModel$Database" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MBOOK_DB@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="MBOOK_DB: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-      </path>
     </expand>
     <select />
   </component>
@@ -126,7 +75,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../bibliotheque-config" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1WEFV7ZqQC9OKmt3i9KUubdLWHj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -139,7 +88,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -156,14 +105,15 @@
       <recent name="com.rudy.bibliotheque.webui.beans" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.rudy.bibliotheque.batch.util" />
       <recent name="com.rudy.bibliotheque.zuulserver.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Openclassroom\7-\bibliotheque\microservice-batch\src\main\java\com\rudy\bibliotheque\batch\model" />
       <recent name="D:\Openclassroom\7-\bibliotheque\zuul-server\src\main\java\com\rudy\bibliotheque\zuulserver" />
+      <recent name="D:\Openclassroom\7-\bibliotheque\microservice-batch\src\main\java\com\rudy\bibliotheque\batch" />
+      <recent name="D:\Openclassroom\7-\bibliotheque\microservice-batch\src\main\java\com\rudy\bibliotheque\batch\model" />
       <recent name="D:\Openclassroom\7-\bibliotheque\microservice-book\src\main\resources\db\changelog" />
       <recent name="D:\Openclassroom\7-\bibliotheque\microservice-book" />
-      <recent name="D:\Openclassroom\7-\bibliotheque\microservice-ouvrage\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -183,7 +133,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MicroserviceBookApplication">
+  <component name="RunManager" selected="Spring Boot.MicroserviceBatchApplication">
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rudy.bibliotheque.configserver.ConfigServerApplication" />
@@ -262,6 +212,11 @@
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@75fcbe80" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@a9b0e776" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@18e92f66" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
@@ -300,7 +255,7 @@
       <workItem from="1579955731831" duration="8932000" />
       <workItem from="1579970042704" duration="3465000" />
       <workItem from="1580000981712" duration="568000" />
-      <workItem from="1580047698843" duration="21415000" />
+      <workItem from="1580047698843" duration="24311000" />
     </task>
     <servers />
   </component>

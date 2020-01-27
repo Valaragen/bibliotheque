@@ -1,6 +1,6 @@
-package com.rudy.bibliotheque.batch.model;
+package com.rudy.bibliotheque.zuulserver.model;
 
-import com.rudy.bibliotheque.batch.model.common.AbstractEntity;
+import com.rudy.bibliotheque.zuulserver.model.common.AbstractEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.UpdateTimestamp;

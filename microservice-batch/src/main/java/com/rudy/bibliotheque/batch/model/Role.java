@@ -1,6 +1,6 @@
 package com.rudy.bibliotheque.batch.model;
 
-import com.rudy.bibliotheque.mbook.model.common.AbstractEntity;
+import com.rudy.bibliotheque.batch.model.common.AbstractEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
