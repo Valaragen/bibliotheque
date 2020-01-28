@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bd5982-0eda-47f1-b5e9-d8bc98f53802" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/DTO/BorrowDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/repository/BorrowRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/service/BorrowService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/util/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/util/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/resources/db/changelog/db.changelog-0.3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/resources/db/changelog/db.changelog-0.3.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -210,11 +204,6 @@
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@81db2761" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@58609b14" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7b0f22b2" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
@@ -256,7 +245,7 @@
       <workItem from="1580047698843" duration="30657000" />
       <workItem from="1580119324385" duration="5040000" />
       <workItem from="1580159670750" duration="755000" />
-      <workItem from="1580209159876" duration="14764000" />
+      <workItem from="1580209159876" duration="15082000" />
     </task>
     <servers />
   </component>

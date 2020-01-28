@@ -37,7 +37,7 @@ public class BookController {
 
     /**
      * Get all the books from the database
-     * @return HashSet of books from the database
+     * @return List of books from the database
      */
     @GetMapping(Constant.BOOK_PATH)
     public List<Book> getAllBooks() {
@@ -64,6 +64,10 @@ public class BookController {
         return bookService.getBookById(id);
     }
 
+    /**
+     * Get all the loans from the database
+     * @return List of loans as a DTO that contains useful informations about the related book and user
+     */
     @GetMapping(Constant.LOANS_PATH)
     public List<BorrowDTO> getAllLoans(){
         List<BorrowDTO> borrowDTOs = new ArrayList<>();
@@ -79,6 +83,10 @@ public class BookController {
         return borrowDTOs;
     }
 
+    /**
+     * Get all expired and non returned loans from the database
+     * @return List of loans as a DTO that contains useful informations about the related book and user
+     */
     @GetMapping(Constant.NONRETURNED_EXPIRED_LOANS_PATH)
     public List<BorrowDTO> getAllNonReturnedExpiredLoans(){
         List<BorrowDTO> borrowDTOs = new ArrayList<>();
