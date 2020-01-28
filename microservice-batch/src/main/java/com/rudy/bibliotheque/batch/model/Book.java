@@ -30,4 +30,6 @@ public class Book extends AbstractEntity {
     private Integer copyNumber;
 
     private Integer availableCopyNumber;
+
+    //Todo add isbn
 }

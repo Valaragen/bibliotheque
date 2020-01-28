@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bd5982-0eda-47f1-b5e9-d8bc98f53802" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/config/SpringMailConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/resources/templates/email-body.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/resources/templates/email-subject.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/BookCopy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-batch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/MicroserviceBatchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/MicroserviceBatchApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/processing/BorrowItemProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/processing/BorrowItemProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Borrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/model/Borrow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/resources/template/email-body.vm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/resources/template/email-subject.vm" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +100,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -194,8 +189,8 @@
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.ZuulServerApplication" />
-      <item itemvalue="Spring Boot.MicroserviceBookApplication" />
       <item itemvalue="Spring Boot.MicroserviceBatchApplication" />
+      <item itemvalue="Spring Boot.MicroserviceBookApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -207,26 +202,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@75fcbe80" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@75fcbe80" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@a9b0e776" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@18e92f66" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@18e92f66" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@e93700a" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -257,7 +233,10 @@
       <workItem from="1579955731831" duration="8932000" />
       <workItem from="1579970042704" duration="3465000" />
       <workItem from="1580000981712" duration="568000" />
-      <workItem from="1580047698843" duration="30604000" />
+      <workItem from="1580047698843" duration="30657000" />
+      <workItem from="1580119324385" duration="5040000" />
+      <workItem from="1580159670750" duration="755000" />
+      <workItem from="1580209159876" duration="2134000" />
     </task>
     <servers />
   </component>

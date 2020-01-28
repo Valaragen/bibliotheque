@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -21,15 +22,18 @@ public class Borrow extends AbstractEntity {
     @ManyToOne
     private User user;
 
-    private Boolean hasDurationExtended = false;
+    private boolean hasDurationExtended;
 
     @UpdateTimestamp
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
-    private java.util.Date loanStartDate;
+    private Date loanStartDate;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
-    private java.util.Date loanEndDate;
+    private Date loanEndDate;
+
+    //TODO état à l'empreint
+    //TODO état après l'empreint
 
 }
