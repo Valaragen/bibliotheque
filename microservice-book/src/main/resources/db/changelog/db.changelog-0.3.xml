@@ -96,7 +96,7 @@ Un essai culte, couronné par le prix Hugo, le prix Locus et le grand prix de l'
             <column name="author" value="Pennac Daniel"/>
             <column name="publisher" value="Presse Pocket"/>
             <column name="release_date" valueDate="2002-12-01"/>
-            <column name="copy_number" value="0"/>
+            <column name="copy_number" value="1"/>
             <column name="available_copy_number" value="0"/>
         </insert>
     </changeSet>
@@ -111,10 +111,19 @@ Un essai culte, couronné par le prix Hugo, le prix Locus et le grand prix de l'
             <column name="is_borrowed" valueBoolean="true"/>
             <column name="state_at_purchase" value="neuf"/>
         </insert>
+
+        <insert tableName="book_copy">
+            <column name="version" value="1"/>
+            <column name="book_id" valueComputed="(SELECT id FROM book WHERE isbn='9782266126304')"/>
+            <column name="code" value="1"/>
+            <column name="current_state" value="neuf"/>
+            <column name="is_borrowed" valueBoolean="true"/>
+            <column name="state_at_purchase" value="neuf"/>
+        </insert>
     </changeSet>
 
     <changeSet id="mbook-005" author="rudy boinnard">
-        <comment>Add an expired borrow</comment>
+        <comment>Add an expired borrow and a not expired one</comment>
         <insert tableName="borrow">
             <column name="version" value="1"/>
             <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='valaragen')"/>
@@ -123,6 +132,17 @@ Un essai culte, couronné par le prix Hugo, le prix Locus et le grand prix de l'
             <column name="has_duration_extended" valueBoolean="false"/>
             <column name="loan_start_date" valueDate="2020-01-01"/>
             <column name="loan_end_date" valueDate="2020-01-14"/>
+            <column name="state_before_borrow" value="neuf"/>
+        </insert>
+
+        <insert tableName="borrow">
+            <column name="version" value="1"/>
+            <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='valaragen')"/>
+            <column name="book_copy_book_id" valueComputed="(SELECT id FROM book WHERE isbn='9782266126304')"/>
+            <column name="book_copy_code" value="1"/>
+            <column name="has_duration_extended" valueBoolean="false"/>
+            <column name="loan_start_date" valueDate="2020-01-27"/>
+            <column name="loan_end_date" valueDate="2020-02-14"/>
             <column name="state_before_borrow" value="neuf"/>
         </insert>
     </changeSet>
