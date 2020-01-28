@@ -6,30 +6,40 @@ import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
+import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 public class Borrow extends AbstractEntity {
     @ManyToOne
-    private Book book;
+    private BookCopy bookCopy;
 
     @ManyToOne
     private User user;
 
-    private Boolean hasDurationExtended = false;
+    @Column(nullable = false)
+    private boolean hasDurationExtended;
 
     @UpdateTimestamp
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
-    private java.util.Date loanStartDate;
+    @Column(nullable = false)
+    private Date loanStartDate;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
-    private java.util.Date loanEndDate;
+    @Column(nullable = false)
+    private Date loanEndDate;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
+    private Date returnedOn;
+
+    @Column(nullable = false)
+    private String stateBeforeBorrow;
+
+    private String stateAfterBorrow;
 
 }

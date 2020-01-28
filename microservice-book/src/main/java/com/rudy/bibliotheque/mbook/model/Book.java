@@ -15,12 +15,16 @@ import java.util.Date;
 @Data
 @Entity
 public class Book extends AbstractEntity {
+    @Column(length = 13, unique = true)
+    private String isbn;
     @Column(length = 100, nullable = false)
     private String name;
     @Column(length = 5000)
     private String description;
     @Column(nullable = false)
     private String author;
+    @Column(nullable = false)
+    private String publisher;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
@@ -30,4 +34,5 @@ public class Book extends AbstractEntity {
     private Integer copyNumber;
 
     private Integer availableCopyNumber;
+
 }
