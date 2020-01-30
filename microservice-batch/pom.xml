@@ -50,6 +50,24 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
+        <!-- DISCOVERY -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+		<!-- COMMUNICATION -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+
+		<!-- LOAD BALANCING -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+		</dependency>
+
 		<!-- DBMS -->
 		<dependency>
 			<groupId>org.postgresql</groupId>

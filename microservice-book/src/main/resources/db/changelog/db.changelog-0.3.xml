@@ -69,32 +69,81 @@
         <comment>Add sample books</comment>
         <insert tableName="book">
             <column name="version" value="1"/>
-            <column name="name" value="la patte du loup"/>
-            <column name="description" value="Une histoire touchante"/>
-            <column name="author" value="Franck"/>
-            <column name="release_date" valueDate="2019-11-19"/>
-            <column name="copy_number" value="10"/>
-            <column name="available_copy_number" value="10"/>
+            <column name="isbn" value="9782226326034"/>
+            <column name="name" value="Anatomie De L'horreur"/>
+            <column name="description"
+                    value="« Nous nous réfugions dans des terreurs pour de faux afin d'éviter que les vraies nous terrassent, nous gèlent sur place et nous empêchent de mener notre vie quotidienne. » Stephen King
+
+Depuis Carrie jusqu'à Sleeping beauties, Stephen King, l'écrivain à l'imagination débordante et à l'inégalable talent de conteur, a redéfini le genre de l'épouvante et du fantastique. Qui mieux que lui pouvait disséquer la structure, les origines, les influences de ce phénomène qui constitue la matière première de son oeuvre ?
+
+Sur le ton d'une conversation effroyablement drôle et enrichissante, Stephen King nous révèle son monde secret - son enfance, ses premières terreurs, ses idoles... - et dessine les grandes lignes d'un univers fascinant qui fait partie de notre patrimoine, du Projet Blair Witch à L'Exorciste en passant les romans de Ray Bradbury ou de J.G. Ballard.
+
+Un essai culte, couronné par le prix Hugo, le prix Locus et le grand prix de l'Imaginaire, dans une nouvelle édition revue et enrichie de deux préfaces inédites de Stephen King"
+            />
+            <column name="author" value="Stephen King"/>
+            <column name="publisher" value="Educa Books"/>
+            <column name="release_date" valueDate="2018-10-15"/>
+            <column name="copy_number" value="1"/>
+            <column name="available_copy_number" value="0"/>
         </insert>
         <insert tableName="book">
             <column name="version" value="1"/>
-            <column name="name" value="Une longue journée"/>
-            <column name="description" value="La biographie de Marcel"/>
-            <column name="author" value="Ally"/>
-            <column name="release_date" valueDate="2019-11-19"/>
-            <column name="copy_number" value="5"/>
-            <column name="available_copy_number" value="5"/>
+            <column name="isbn" value="9782266126304"/>
+            <column name="name" value="L'Oeil Du Loup"/>
+            <column name="description"
+                    value="Dans un zoo, un vieux loup et un jeune enfant africain se rencontrent. Leurs yeux racontent leurs histoires de vie. Pour l'un, c'est l'Alaska et la vie sauvage menacée par l'homme, pour l'autre c'est la famine en Afrique et l'art de survivre ... Une histoire insolite et belle sur l'amitié et la survie."
+            />
+            <column name="author" value="Pennac Daniel"/>
+            <column name="publisher" value="Presse Pocket"/>
+            <column name="release_date" valueDate="2002-12-01"/>
+            <column name="copy_number" value="1"/>
+            <column name="available_copy_number" value="0"/>
         </insert>
     </changeSet>
 
     <changeSet id="mbook-004" author="rudy boinnard">
-        <comment>Add an expired borrow</comment>
+        <comment>Add some book copies</comment>
+        <insert tableName="book_copy">
+            <column name="version" value="1"/>
+            <column name="book_id" valueComputed="(SELECT id FROM book WHERE isbn='9782226326034')"/>
+            <column name="code" value="1"/>
+            <column name="current_state" value="neuf"/>
+            <column name="is_borrowed" valueBoolean="true"/>
+            <column name="state_at_purchase" value="neuf"/>
+        </insert>
+
+        <insert tableName="book_copy">
+            <column name="version" value="1"/>
+            <column name="book_id" valueComputed="(SELECT id FROM book WHERE isbn='9782266126304')"/>
+            <column name="code" value="1"/>
+            <column name="current_state" value="neuf"/>
+            <column name="is_borrowed" valueBoolean="true"/>
+            <column name="state_at_purchase" value="neuf"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="mbook-005" author="rudy boinnard">
+        <comment>Add an expired borrow and a not expired one</comment>
         <insert tableName="borrow">
-            <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='valaragen')" />
-            <column name="book_id" valueComputed="(SELECT id FROM book WHERE name='la patte du loup')" />
+            <column name="version" value="1"/>
+            <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='valaragen')"/>
+            <column name="book_copy_book_id" valueComputed="(SELECT id FROM book WHERE isbn='9782226326034')"/>
+            <column name="book_copy_code" value="1"/>
             <column name="has_duration_extended" valueBoolean="false"/>
             <column name="loan_start_date" valueDate="2020-01-01"/>
             <column name="loan_end_date" valueDate="2020-01-14"/>
+            <column name="state_before_borrow" value="neuf"/>
+        </insert>
+
+        <insert tableName="borrow">
+            <column name="version" value="1"/>
+            <column name="user_id" valueComputed="(SELECT id FROM _user WHERE username='valaragen')"/>
+            <column name="book_copy_book_id" valueComputed="(SELECT id FROM book WHERE isbn='9782266126304')"/>
+            <column name="book_copy_code" value="1"/>
+            <column name="has_duration_extended" valueBoolean="false"/>
+            <column name="loan_start_date" valueDate="2020-01-27"/>
+            <column name="loan_end_date" valueDate="2020-02-14"/>
+            <column name="state_before_borrow" value="neuf"/>
         </insert>
     </changeSet>
 </databaseChangeLog>
