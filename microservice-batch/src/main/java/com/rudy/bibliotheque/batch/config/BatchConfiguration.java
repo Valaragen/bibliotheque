@@ -1,10 +1,10 @@
 package com.rudy.bibliotheque.batch.config;
 
-import com.rudy.bibliotheque.batch.model.Borrow;
+import com.rudy.bibliotheque.batch.DTO.BorrowDTO;
 import com.rudy.bibliotheque.batch.processing.BorrowItemProcessor;
 import com.rudy.bibliotheque.batch.processing.JobCompletionNotificationListener;
 import com.rudy.bibliotheque.batch.processing.MailBatchItemWriter;
-import com.rudy.bibliotheque.batch.repository.BorrowRepository;
+import com.rudy.bibliotheque.batch.proxy.MicroserviceBookProxy;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.Step;
@@ -13,20 +13,13 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.data.RepositoryItemReader;
-import org.springframework.batch.item.file.FlatFileItemReader;
-import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
-import org.springframework.batch.item.file.mapping.DefaultLineMapper;
-import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
+import org.springframework.batch.item.support.ListItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.data.domain.Sort;
 
 import javax.mail.internet.MimeMessage;
-import java.util.*;
 
 @Configuration
 @EnableBatchProcessing
@@ -39,7 +32,7 @@ public class BatchConfiguration {
     public StepBuilderFactory stepBuilderFactory;
 
     @Autowired
-    public BorrowRepository borrowRepository;
+    public MicroserviceBookProxy microserviceBookProxy;
 
     @Value("${spring.mail.username}")
     private String sender;
@@ -49,19 +42,8 @@ public class BatchConfiguration {
 
 
     @Bean
-    public ItemReader<Borrow> reader() {
-        RepositoryItemReader<Borrow> reader = new RepositoryItemReader<>();
-        reader.setRepository(borrowRepository);
-        reader.setMethodName("findAllByLoanEndDateBefore");
-        List param = new ArrayList();
-        long millis = System.currentTimeMillis();
-        Date date = new java.sql.Date(millis);
-        param.add(date);
-        reader.setArguments(param);
-        Map<String, Sort.Direction> sort = new HashMap<String, Sort.Direction>();
-        sort.put("id", Sort.Direction.ASC);
-        reader.setSort(sort);
-        return reader;
+    public ItemReader<BorrowDTO> reader() {
+        return new ListItemReader<>(microserviceBookProxy.getAllNonReturnedExpiredLoans());
     }
 
     @Bean
@@ -93,7 +75,7 @@ public class BatchConfiguration {
     @Bean
     public Step step1() {
         return stepBuilderFactory.get("step1")
-                .<Borrow, MimeMessage> chunk(10)
+                .<BorrowDTO, MimeMessage> chunk(10)
                 .reader(reader())
                 .processor(processor())
                 .writer(writer())

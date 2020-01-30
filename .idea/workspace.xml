@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bd5982-0eda-47f1-b5e9-d8bc98f53802" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/DTO/BorrowDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/proxy/MicroserviceBookProxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-book/src/main/java/com/rudy/bibliotheque/mbook/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/MicroserviceBatchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/MicroserviceBatchApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/config/BatchConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/config/BatchConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/processing/BorrowItemProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/java/com/rudy/bibliotheque/batch/processing/BorrowItemProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-batch/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-batch/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-server/src/main/java/com/rudy/bibliotheque/zuulserver/service/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul-server/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-server/src/main/resources/bootstrap.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +69,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -86,12 +96,22 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.rudy.bibliotheque.webui.beans" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.rudy.bibliotheque.batch.DTO" />
+      <recent name="com.rudy.bibliotheque.mbook.service" />
+      <recent name="com.rudy.bibliotheque.batch.util" />
+      <recent name="com.rudy.bibliotheque.zuulserver.util" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Openclassroom\7-\bibliotheque\microservice-book\src\main\java\com\rudy\bibliotheque\mbook" />
       <recent name="D:\Openclassroom\7-\bibliotheque\zuul-server\src\main\java\com\rudy\bibliotheque\zuulserver" />
@@ -99,14 +119,11 @@
       <recent name="D:\Openclassroom\7-\bibliotheque\microservice-batch\src\main\java\com\rudy\bibliotheque\batch\model" />
       <recent name="D:\Openclassroom\7-\bibliotheque\microservice-book\src\main\resources\db\changelog" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.rudy.bibliotheque.mbook.service" />
-      <recent name="com.rudy.bibliotheque.batch.util" />
-      <recent name="com.rudy.bibliotheque.zuulserver.util" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.rudy.bibliotheque.webui.beans" />
-    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="eureka.client.fetchRegistry=true" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -125,7 +142,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MicroserviceBookApplication">
+  <component name="RunManager" selected="Spring Boot.MicroserviceBatchApplication">
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rudy.bibliotheque.configserver.ConfigServerApplication" />
@@ -195,21 +212,17 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@81db2761" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@857cdeb4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@81db2761" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@8a8a577a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@857cdeb4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bacb5adc" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7b0f22b2" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7b0f22b2" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5d1d1cc9" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@857cdeb4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c34963c6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -245,7 +258,10 @@
       <workItem from="1580047698843" duration="30657000" />
       <workItem from="1580119324385" duration="5040000" />
       <workItem from="1580159670750" duration="755000" />
-      <workItem from="1580209159876" duration="15082000" />
+      <workItem from="1580209159876" duration="15126000" />
+      <workItem from="1580259250801" duration="4623000" />
+      <workItem from="1580334906827" duration="1190000" />
+      <workItem from="1580384566135" duration="4092000" />
     </task>
     <servers />
   </component>
