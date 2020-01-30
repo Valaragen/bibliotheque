@@ -11,7 +11,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
-
+//TODO LOG + JAVADOC
 @SpringBootApplication
 @EnableFeignClients("com.rudy.bibliotheque.batch")
 @EnableDiscoveryClient
