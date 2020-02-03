@@ -7,6 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class NavigationController {
     @GetMapping("/")
     public String getHomepage() {
-        return "homepage";
+        return "homePage";
     }
+
+    @GetMapping("/books")
+    public String getBooksPage() {
+        return "books";
+    }
+
+    @GetMapping("/loans")
+    public String getLoansPage() {
+        return "loans";
+    }
+
 }

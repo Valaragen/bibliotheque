@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html th:replace="includes/layouts :: basicLayout(~{::title},~{::main},~{},~{})" lang="fr"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title th:text="'Erreur ' + ${status} + ' - Bibliothèque'"></title>
+</head>
+<body>
+<main role="main" class="container login-center">
+
+    <div class="row w-100 mx-auto" th:switch="${status}" id="error-box">
+        <div class="col-md-8" th:case="'404'">
+            <h1 class="h1">Cette page n'existe pas</h1>
+            <p class="h5">La page que vous recherchez semble introuvable</p>
+            <a class="btn btn-lightblue" th:href="@{/static}">Retourner à l'accueil</a>
+        </div>
+        <div class="col-md-8" th:case="*">
+            <h1>Oops</h1>
+            <p class="h6">Une erreur s'est produite</p>
+            <a class="btn btn-lightblue" th:href="@{/static}">Retourner à l'accueil</a>
+        </div>
+    </div>
+    <table sec:authorize="hasRole('ROLE_ADMIN')">
+        <tr>
+            <td>Date</td>
+            <td th:text="${timestamp}"/>
+        </tr>
+        <tr>
+            <td>Path</td>
+            <td th:text="${path}"/>
+        </tr>
+        <tr>
+            <td>Error</td>
+            <td th:text="${error}"/>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td th:text="${status}"/>
+        </tr>
+        <tr>
+            <td>Message</td>
+            <td th:text="${message}"/>
+        </tr>
+        <tr>
+            <td>Exception</td>
+            <td th:text="${exception}"/>
+        </tr>
+        <tr>
+            <td>Trace</td>
+            <td>
+                <pre th:text="${trace}"/>
+            </td>
+        </tr>
+    </table>
+
+</main>
+</body>
+</html>

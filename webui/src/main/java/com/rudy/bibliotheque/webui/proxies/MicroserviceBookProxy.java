@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@FeignClient(name = "microservice-book")
+@FeignClient(name = "zuul-server")
 @RibbonClient(name = "microservice-book")
 public interface MicroserviceBookProxy {
 
@@ -15,7 +15,7 @@ public interface MicroserviceBookProxy {
      * Get all the books from the database
      * @return HashSet of books from the database
      */
-    @GetMapping("/books")
-    public List<BookBean> getAllBooks();
+    @GetMapping("microservice-book/books")
+    List<BookBean> getAllBooks();
 
 }

@@ -12,7 +12,7 @@
     <meta name="description" content="Un site pour les fans d'escalade"/>
     <meta name="author" content="Valaragen"/>
 
-    <title th:replace="${title}">Les amis de l'escalade</title>
+    <title th:replace="${title}">Bibliothèque</title>
 
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}">
@@ -26,9 +26,9 @@
 <!-- ---------------------------------------- -->
 <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top" id="customNavbar">
     <a class="navbar-brand" th:href="@{/}">
-        <img th:src="@{/image/logo.png}" width="30" height="18" class="d-inline-block"
-             alt="les amis de l'escalade logo">
-        les amis de l'escalade
+<!--        <img th:src="@{/image/book-logo.png}" width="30" height="18" class="d-inline-block"-->
+<!--             alt="les amis de l'escalade logo">-->
+        Bibliothèque
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
             aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,12 +41,12 @@
                 <a class="nav-link" th:href="@{/}">Accueil <span th:if="${#httpServletRequest.getRequestURI() == '/'}"
                                                                  class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item" th:classappend="${#httpServletRequest.getRequestURI() == '/sites' ? 'active':''}">
-                <a class="nav-link" th:href="@{/sites}">Sites d'escalade <span th:if="${#httpServletRequest.getRequestURI() == '/'}"
+            <li class="nav-item" th:classappend="${#httpServletRequest.getRequestURI() == '/books' ? 'active':''}">
+                <a class="nav-link" th:href="@{/books}">Livres <span th:if="${#httpServletRequest.getRequestURI() == '/books'}"
                                                                                class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item" th:classappend="${#httpServletRequest.getRequestURI() == '/topos' ? 'active':''}">
-                <a class="nav-link" th:href="@{/topos}">Topos <span th:if="${#httpServletRequest.getRequestURI() == '/'}"
+            <li class="nav-item" th:classappend="${#httpServletRequest.getRequestURI() == '/loans' ? 'active':''}">
+                <a class="nav-link" th:href="@{/loans}">Emprunts <span th:if="${#httpServletRequest.getRequestURI() == '/loans'}"
                                                                                class="sr-only">(current)</span></a>
             </li>
         </ul>
