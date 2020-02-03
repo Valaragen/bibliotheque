@@ -81,8 +81,9 @@ public class SecurityConfiguration extends KeycloakWebSecurityConfigurerAdapter 
                 .logout()
                 .addLogoutHandler(keycloakLogoutHandler())
                 .logoutUrl("/logout")
-                .logoutSuccessHandler((HttpServletRequest request, HttpServletResponse response, Authentication authentication) ->
-                        response.setStatus(HttpServletResponse.SC_OK))
+//                .logoutSuccessHandler((HttpServletRequest request, HttpServletResponse response, Authentication authentication) ->
+//                        response.setStatus(HttpServletResponse.SC_OK))
+                .logoutSuccessUrl("/")
 
                 // Manage route authorizations
                 .and()
