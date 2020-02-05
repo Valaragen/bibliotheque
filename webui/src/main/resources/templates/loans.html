@@ -9,6 +9,14 @@
 <body>
 <main role="main" class="container-fluid mt-1">
     <h1>Emprunts</h1>
+    <div th:each="loan : ${loans}">
+        <p th:text="${loan.userUsername}"></p>
+        <p th:text="${loan.userEmail}"></p>
+        <p th:text="${loan.loanStartDate}"></p>
+        <p th:text="${loan.loanEndDate}"></p>
+        <p th:text="${loan.bookIsbn}"></p>
+        <p th:text="${loan.bookName}"></p>
+    </div>
 </main>
 </body>
 </html>

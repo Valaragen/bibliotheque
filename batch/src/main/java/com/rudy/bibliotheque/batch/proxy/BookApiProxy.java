@@ -9,7 +9,7 @@ import java.util.List;
 
 @FeignClient(name = "zuul-server")
 @RibbonClient(name = "book-api")
-public interface MicroserviceBookProxy {
+public interface BookApiProxy {
 
     @GetMapping(value = "/book-api/loans/nonReturnedExpiredLoans")
     List<BorrowDTO> getAllNonReturnedExpiredLoans();

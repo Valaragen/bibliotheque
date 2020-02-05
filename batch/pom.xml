@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.rudy.bibliotheque</groupId>
-	<artifactId>microservice-batch</artifactId>
+	<artifactId>batch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>microservice-batch</name>
+	<name>batch</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

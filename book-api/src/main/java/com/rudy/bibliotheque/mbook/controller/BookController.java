@@ -1,5 +1,6 @@
 package com.rudy.bibliotheque.mbook.controller;
 
+import com.rudy.bibliotheque.mbook.DTO.BookDTO;
 import com.rudy.bibliotheque.mbook.DTO.BorrowDTO;
 import com.rudy.bibliotheque.mbook.config.ApplicationPropertiesConfig;
 import com.rudy.bibliotheque.mbook.model.Borrow;
@@ -14,9 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.core.HttpHeaders;
+import java.util.*;
 
 /**
  * Controller class for the api
@@ -41,8 +42,9 @@ public class BookController {
      * @return List of books from the database
      */
     @GetMapping(Constant.BOOK_PATH)
-    public List<Book> getAllBooks() {
-        return bookService.getAllBooks();
+    public List<BookDTO> getAllBooks(HttpServletRequest request) {
+        List<Book> books = bookService.getAllBooks();
+        return bookService.convertBooksToDTOs(books);
     }
 
     /**
@@ -73,16 +75,9 @@ public class BookController {
     @GetMapping(Constant.LOANS_PATH)
     public List<BorrowDTO> getAllLoans(){
         List<BorrowDTO> borrowDTOs = new ArrayList<>();
-
-        long millis=System.currentTimeMillis();
-        Date date = new Date(millis);
-
         List<Borrow> loans = borrowService.getAllLoans();
-        for (Borrow borrow : loans) {
-            borrowDTOs.add(borrowService.convertBorrowToDTO(borrow));
-        }
 
-        return borrowDTOs;
+        return borrowService.convertBorrowsToDTOs(loans);
     }
 
     /**
@@ -97,11 +92,8 @@ public class BookController {
         Date date = new Date(millis);
 
         List<Borrow> loans = borrowService.getAllNonReturnedExpiredLoans(date);
-        for (Borrow borrow : loans) {
-            borrowDTOs.add(borrowService.convertBorrowToDTO(borrow));
-        }
 
-        return borrowDTOs;
+        return borrowService.convertBorrowsToDTOs(loans);
     }
 
 }

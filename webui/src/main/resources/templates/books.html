@@ -9,6 +9,9 @@
 <body>
 <main role="main" class="container-fluid mt-1">
     <h1>Livres</h1>
+    <div th:each="book : ${books}">
+        <p th:text="${book.name}"></p>
+    </div>
 </main>
 </body>
 </html>

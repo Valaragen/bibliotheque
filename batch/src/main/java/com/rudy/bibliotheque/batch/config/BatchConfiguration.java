@@ -4,7 +4,7 @@ import com.rudy.bibliotheque.batch.DTO.BorrowDTO;
 import com.rudy.bibliotheque.batch.processing.BorrowItemProcessor;
 import com.rudy.bibliotheque.batch.processing.JobCompletionNotificationListener;
 import com.rudy.bibliotheque.batch.processing.MailBatchItemWriter;
-import com.rudy.bibliotheque.batch.proxy.MicroserviceBookProxy;
+import com.rudy.bibliotheque.batch.proxy.BookApiProxy;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.Step;
@@ -32,7 +32,7 @@ public class BatchConfiguration {
     public StepBuilderFactory stepBuilderFactory;
 
     @Autowired
-    public MicroserviceBookProxy microserviceBookProxy;
+    public BookApiProxy microserviceBookProxy;
 
     @Value("${spring.mail.username}")
     private String sender;
