@@ -1,0 +1,12 @@
+{
+  "realm": "bibliotheque",
+  "auth-server-url": "http://localhost:8080/auth/",
+  "ssl-required": "external",
+  "resource": "batch",
+  "verify-token-audience": true,
+  "credentials": {
+    "secret": "12c7d7a6-7545-40da-ac28-60a7e05941ac"
+  },
+  "confidential-port": 0,
+  "policy-enforcer": {}
+}

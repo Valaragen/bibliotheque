@@ -20,19 +20,25 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.mail.internet.MimeMessage;
+import java.util.ArrayList;
+import java.util.List;
 
 @Configuration
 @EnableBatchProcessing
 public class BatchConfiguration {
 
-    @Autowired
-    public JobBuilderFactory jobBuilderFactory;
+    private JobBuilderFactory jobBuilderFactory;
+
+    private StepBuilderFactory stepBuilderFactory;
+
+    private BookApiProxy bookApiProxy;
 
     @Autowired
-    public StepBuilderFactory stepBuilderFactory;
-
-    @Autowired
-    public BookApiProxy microserviceBookProxy;
+    public BatchConfiguration(JobBuilderFactory jobBuilderFactory, StepBuilderFactory stepBuilderFactory, BookApiProxy bookApiProxy) {
+        this.jobBuilderFactory = jobBuilderFactory;
+        this.stepBuilderFactory = stepBuilderFactory;
+        this.bookApiProxy = bookApiProxy;
+    }
 
     @Value("${spring.mail.username}")
     private String sender;
@@ -43,7 +49,7 @@ public class BatchConfiguration {
 
     @Bean
     public ItemReader<BorrowDTO> reader() {
-        return new ListItemReader<>(microserviceBookProxy.getAllNonReturnedExpiredLoans());
+        return new ListItemReader<>(bookApiProxy.getAllNonReturnedExpiredLoans());
     }
 
     @Bean
@@ -53,8 +59,7 @@ public class BatchConfiguration {
 
     @Bean
     public MailBatchItemWriter writer() {
-        MailBatchItemWriter writer = new MailBatchItemWriter();
-        return writer;
+        return new MailBatchItemWriter();
     }
 
     @Bean

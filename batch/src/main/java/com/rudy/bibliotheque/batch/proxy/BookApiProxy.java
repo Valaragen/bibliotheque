@@ -11,7 +11,7 @@ import java.util.List;
 @RibbonClient(name = "book-api")
 public interface BookApiProxy {
 
-    @GetMapping(value = "/book-api/loans/nonReturnedExpiredLoans")
+    @GetMapping("/book-api/loans/nonReturnedExpiredLoans")
     List<BorrowDTO> getAllNonReturnedExpiredLoans();
 
 }
