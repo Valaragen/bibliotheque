@@ -4,11 +4,11 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <title>Livres - Bibliothèque</title>
+    <title th:text="${book.name} + ' - Bibliothèque'"></title>
 </head>
 <body>
 <main role="main" class="container mt-1">
-    <div class="card mb-3 bg-light" th:each="book : ${books}">
+    <div class="card mb-3 bg-light">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img th:src="@{/image/logo_book.png}" class="card-img" alt="book image">
@@ -17,7 +17,6 @@
                 <div class="card-body">
                     <h5 class="card-title" th:text="${book.name}">Card title</h5>
                     <p class="card-text text-justify text-4-line-truncate" th:text="${book.description}"></p>
-                    <a class="btn btn-primary" th:href="@{/books/{id}(id=${book.id})}" role="button">Consulter</a>
                 </div>
             </div>
         </div>

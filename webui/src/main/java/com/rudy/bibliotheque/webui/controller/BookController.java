@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping(Constant.BOOKS_PATH)
-public class BooksController {
+public class BookController {
 
     private BookApiProxy bookApiProxy;
 
     @Autowired
-    public BooksController(BookApiProxy bookApiProxy){
+    public BookController(BookApiProxy bookApiProxy){
         this.bookApiProxy = bookApiProxy;
     }
 
@@ -27,7 +27,8 @@ public class BooksController {
     }
 
     @GetMapping(Constant.SLASH_ID_PATH)
-    public String getBookDetailsPageById(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("book", bookApiProxy.getAllBooks());
+    public String getBookDetailsPageById(@PathVariable Long id, Model model) {
+        model.addAttribute("book", bookApiProxy.getBookById(id));
+        return Constant.BOOK_DETAILS_PAGE;
     }
 }

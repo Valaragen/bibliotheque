@@ -8,12 +8,14 @@
 </head>
 <body>
 <main role="main" class="container-fluid mt-1">
-    <div class="col-md-10 mx-auto">
-        <h2>Rechercher un livre</h2>
-    </div>
-    <div class="col-md-10 mx-auto">
-        <h2>Consulter mes emprunts</h2>
-    </div>
+    <h1 class="text-center mt-3">Bibliotheque</h1>
+    <form class="col-12 col-sm-10 col-md-8 col-lg-7 m-auto form-inline my-2 my-lg-0"
+          id="homepage-searchForm" action="/books" method="GET">
+        <h2 class="mt-5">Rechercher un livre</h2>
+        <input class="form-control col-9" id="name"
+               type="text" placeholder="Nom du livre" aria-label="Search">
+        <button class="btn btn-primary col-3" type="submit">Rechercher</button>
+    </form>
 </main>
 </body>
 </html>
