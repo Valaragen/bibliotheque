@@ -27,7 +27,7 @@ public class BatchApplication {
 		SpringApplication.run(BatchApplication.class, args);
 	}
 
-	@Scheduled(cron = "0 45 14 * * ?")
+	@Scheduled(cron = "0 30 11 * * ?")
 	public void perform() throws Exception
 	{
 		JobParameters params = new JobParametersBuilder()

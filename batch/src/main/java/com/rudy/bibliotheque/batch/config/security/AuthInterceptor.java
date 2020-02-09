@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
+//TODO The token may not be correctly refreshed as batch are asyncronous ?
+// TODO https://www.keycloak.org/docs/latest/server_admin/index.html DIRECT GRANT
 class AuthInterceptor implements RequestInterceptor {
     private Logger logger = LoggerFactory.getLogger(AuthInterceptor.class);
 

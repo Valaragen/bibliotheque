@@ -59,7 +59,7 @@ public class SecurityConfiguration extends KeycloakWebSecurityConfigurerAdapter 
                 // Manage route authorizations
                 .and()
                 .authorizeRequests()
-                .anyRequest().permitAll()
+                .anyRequest().denyAll()
                 .and()
                 // CSRF no required in the API
                 .csrf().disable();
