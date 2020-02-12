@@ -9,10 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
-
 @Controller
-@RequestMapping(Constant.LOANS_LIST_PAGE)
+@RequestMapping(Constant.LOANS_PATH)
 public class LoansController {
 
     private BookApiProxy bookApiProxy;
@@ -22,17 +20,17 @@ public class LoansController {
         this.bookApiProxy = bookApiProxy;
     }
 
-    @PreAuthorize("hasRole("+ Constant.STAFF_ROLE_NAME +")")
+    @PreAuthorize("hasRole('"+ Constant.STAFF_ROLE_NAME +"')")
     @GetMapping
-    public String getLoansPage(HttpServletRequest request, Model model) {
+    public String getLoansPage(Model model) {
         model.addAttribute("loans", bookApiProxy.getAllLoans());
         return Constant.LOANS_LIST_PAGE;
     }
 
-    @PreAuthorize("hasRole("+ Constant.USER_ROLE_NAME +")")
-    @GetMapping("/myLoans")
-    public String getCurrentUserLoans() {
-        //TODO Implement logic
-        return "myLoans";
+    @PreAuthorize("hasRole('"+ Constant.USER_ROLE_NAME +"')")
+    @GetMapping("/my-loans")
+    public String getCurrentUserLoans(Model model) {
+        model.addAttribute("loans", bookApiProxy.getLoansByCurrentUser());
+        return Constant.LOANS_LIST_PAGE;
     }
 }

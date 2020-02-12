@@ -23,6 +23,9 @@ public interface BookApiProxy {
     @GetMapping(Constant.LOANS_PATH)
     List<BorrowDTO> getAllLoans();
 
+    @GetMapping(Constant.LOANS_PATH + Constant.USERS_PATH + "/current")
+    List<BorrowDTO> getLoansByCurrentUser();
+
     @PostMapping(Constant.BOOKS_PATH)
     BookDTO saveBookInDatabase(BookDTO bookDTO);
 

@@ -1,10 +1,18 @@
 package com.rudy.bibliotheque.mbook.util;
 
+import org.springframework.beans.factory.annotation.Value;
+
 // TODO Update
 public class Constant {
+    //ROLES
+    public static final String USER_ROLE_NAME = "ROLE_USER";
+    public static final String STAFF_ROLE_NAME = "ROLE_STAFF";
+    public static final String ADMIN_ROLE_NAME = "ROLE_ADMIN";
+
     public static final String SLASH_ID = "/{id}";
     public static final String SLASH_STRING = "/{string}";
 
+    public static final String USERS_PATH = "/users";
     public static final String BOOKS_PATH = "/books";
     public static final String BOOK_VIEW_PATH = SLASH_STRING;
 

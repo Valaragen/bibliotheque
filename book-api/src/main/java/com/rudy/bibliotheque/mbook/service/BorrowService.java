@@ -3,7 +3,6 @@ package com.rudy.bibliotheque.mbook.service;
 import com.rudy.bibliotheque.mbook.DTO.BorrowDTO;
 import com.rudy.bibliotheque.mbook.model.Book;
 import com.rudy.bibliotheque.mbook.model.Borrow;
-import com.rudy.bibliotheque.mbook.model.User;
 import com.rudy.bibliotheque.mbook.repository.BorrowRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +26,10 @@ public class BorrowService {
         return borrowRepository.findAll();
     }
 
+    public List<Borrow> getAllLoansByUserId(String id) {
+        return borrowRepository.findByUserInfoId(id);
+    }
+
     public Borrow getLoanById(Long id) {
         return borrowRepository.findById(id).orElse(null);
     }
@@ -35,13 +38,13 @@ public class BorrowService {
         return borrowRepository.findAllByReturnedOnIsNullAndLoanEndDateBefore(date);
     }
 
+    //TODO If username and email can change, then databse trigger should be created
     public BorrowDTO convertBorrowToDTO(Borrow borrow) {
         BorrowDTO borrowDTO = new BorrowDTO();
         Book borrowedBook = borrow.getBookCopy().getId().getBook();
-        User borrowingUser = borrow.getUser();
 
-        borrowDTO.setUserUsername(borrowingUser.getUsername());
-        borrowDTO.setUserEmail(borrowingUser.getEmail());
+//        borrowDTO.setUserUsername(borrow.getUserUsername());
+//        borrowDTO.setUserEmail(borrow.getUserEmail());
 
         borrowDTO.setLoanStartDate(borrow.getLoanStartDate());
         borrowDTO.setLoanEndDate(borrow.getLoanEndDate());

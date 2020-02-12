@@ -13,6 +13,7 @@ public class Constant {
     public static final String SLASH_ID_PATH = "/{id}";
     public static final String SLASH_STRING_PATH = "/{string}";
 
+    public static final String USERS_PATH = "/users";
     public static final String BOOKS_PATH = "/books";
     public static final String LOANS_PATH = "/loans";
 
@@ -22,6 +23,5 @@ public class Constant {
     public static final String BOOKS_LIST_PAGE = "booksListPage";
     public static final String LOANS_LIST_PAGE = "loansListPage";
     public static final String BOOK_DETAILS_PAGE = "bookDetailsPage";
-
 
 }

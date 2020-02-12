@@ -42,17 +42,14 @@
                                                                  class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item" th:classappend="${#httpServletRequest.getRequestURI().contains('/books') ? 'active':''}">
-                <a class="nav-link" th:href="@{/books}">Livres <span th:if="${#httpServletRequest.getRequestURI() == '/books'}"
+                <a class="nav-link" th:href="@{/books}">Les livres <span th:if="${#httpServletRequest.getRequestURI() == '/books'}"
                                                                                class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item" th:classappend="${#httpServletRequest.getRequestURI().contains('/loans') ? 'active':''}">
-                <a class="nav-link" th:href="@{/loans}">Emprunts <span th:if="${#httpServletRequest.getRequestURI() == '/loans'}"
+                <a class="nav-link" th:href="@{/loans/my-loans}">Mes emprunts <span th:if="${#httpServletRequest.getRequestURI() == '/loans'}"
                                                                                class="sr-only">(current)</span></a>
             </li>
         </ul>
-<!--        <a sec:authorize="isAnonymous()" class="btn btn-outline-primary d-inline my-2 my-lg-0 mr-2 text-white"-->
-<!--           th:href="@{/register}"-->
-<!--           id="registerBtn">S'enregistrer</a>-->
         <a sec:authorize="isAnonymous()" class="btn btn-primary d-inline my-2 my-lg-0" th:href="@{/sso/login}" id="loginBtn">Connexion</a>
         <ul sec:authorize="isAuthenticated()" class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
