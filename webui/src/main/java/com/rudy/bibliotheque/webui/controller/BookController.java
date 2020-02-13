@@ -2,6 +2,8 @@ package com.rudy.bibliotheque.webui.controller;
 
 import com.rudy.bibliotheque.webui.proxies.BookApiProxy;
 import com.rudy.bibliotheque.webui.util.Constant;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(Constant.BOOKS_PATH)
 public class BookController {
+
+    Logger log = LoggerFactory.getLogger(this.getClass());
 
     private BookApiProxy bookApiProxy;
 

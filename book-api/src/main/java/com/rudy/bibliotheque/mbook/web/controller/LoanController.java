@@ -1,6 +1,5 @@
-package com.rudy.bibliotheque.mbook.controller;
+package com.rudy.bibliotheque.mbook.web.controller;
 
-import com.rudy.bibliotheque.mbook.DTO.BookDTO;
 import com.rudy.bibliotheque.mbook.DTO.BorrowDTO;
 import com.rudy.bibliotheque.mbook.model.Borrow;
 import com.rudy.bibliotheque.mbook.service.BorrowService;

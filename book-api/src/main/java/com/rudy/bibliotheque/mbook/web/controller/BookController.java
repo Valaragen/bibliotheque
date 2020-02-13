@@ -1,11 +1,14 @@
-package com.rudy.bibliotheque.mbook.controller;
+package com.rudy.bibliotheque.mbook.web.controller;
 
-import com.rudy.bibliotheque.mbook.DTO.BookDTO;
 import com.rudy.bibliotheque.mbook.config.ApplicationPropertiesConfig;
+import com.rudy.bibliotheque.mbook.web.exception.BookNotFoundException;
 import com.rudy.bibliotheque.mbook.util.Constant;
 import com.rudy.bibliotheque.mbook.model.Book;
 import com.rudy.bibliotheque.mbook.service.BookService;
+import com.rudy.bibliotheque.mbook.web.exception.CantCreateBookException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,9 +36,11 @@ public class BookController {
      * @return List of books from the database
      */
     @GetMapping
-    public List<BookDTO> getAllBooks(HttpServletRequest request) {
+    public List<Book> getAllBooks(HttpServletRequest request) {
         List<Book> books = bookService.getAllBooks();
-        return bookService.convertBooksToDTOs(books);
+        if (books.isEmpty()) throw new BookNotFoundException();
+
+        return books;
     }
 
     /**
@@ -43,8 +48,10 @@ public class BookController {
      * @return the new saved book
      */
     @PostMapping
-    public BookDTO saveBookInDatabase(BookDTO bookDTO) {
-        return bookService.convertBookToDTO(bookService.createBookFromDTO(bookDTO));
+    public ResponseEntity<Book> saveBookInDatabase(@RequestBody Book book) {
+        Book newBook = bookService.createBook(book);
+        if (newBook == null) throw new CantCreateBookException();
+        return new ResponseEntity<>(newBook, HttpStatus.CREATED);
     }
 
     /**
@@ -53,7 +60,9 @@ public class BookController {
      * @return the book with the given id
      */
     @GetMapping(Constant.SLASH_ID)
-    public BookDTO getBookById(@PathVariable Long id) {
-        return bookService.convertBookToDTO(bookService.getBookById(id));
+    public Book getBookById(@PathVariable Long id) {
+        Book book = bookService.getBookById(id);
+        if(book == null) throw new BookNotFoundException();
+        return book;
     }
 }
