@@ -24,10 +24,19 @@ public interface BookApiProxy {
     @GetMapping(Constant.LOANS_PATH + Constant.USERS_PATH + "/current")
     List<BorrowDTO> getLoansByCurrentUser();
 
-    @PostMapping
-    ResponseEntity<BookDTO> saveBookInDatabase(@RequestBody BookDTO book);
+    @PostMapping(Constant.BOOKS_PATH)
+    ResponseEntity<BookDTO> saveBookInDatabase(@RequestBody BookDTO bookDTO);
 
     @GetMapping(Constant.BOOKS_PATH + Constant.SLASH_ID_PATH)
     BookDTO getBookById(@PathVariable("id") Long id);
+
+    @PutMapping(Constant.BOOKS_PATH + Constant.SLASH_ID_PATH)
+    ResponseEntity<BookDTO> updateBook(@PathVariable("id") Long id, @RequestBody BookDTO bookDTO);
+
+    @DeleteMapping(Constant.BOOKS_PATH + Constant.SLASH_ID_PATH)
+    ResponseEntity<BookDTO> deleteBook(@PathVariable("id") Long id);
+
+    @PutMapping(Constant.LOANS_PATH + Constant.SLASH_ID_PATH + Constant.EXTEND_PATH)
+    ResponseEntity<BorrowDTO> extendMyLoan(@PathVariable Long id);
 
 }

@@ -15,6 +15,7 @@ public class Constant {
     public static final String USERS_PATH = "/users";
     public static final String BOOKS_PATH = "/books";
     public static final String BOOK_VIEW_PATH = SLASH_STRING;
+    public static final String EXTEND_PATH = "/extend";
 
     public static final String LOANS_PATH = "/loans";
     public static final String NONRETURNED_EXPIRED_LOANS_PATH = "/nonReturnedExpiredLoans";

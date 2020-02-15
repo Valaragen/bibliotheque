@@ -21,7 +21,7 @@
             <a class="btn btn-primary" th:href="@{/static}">Retourner à l'accueil</a>
         </div>
     </div>
-    <table sec:authorize="hasRole('ROLE_ADMIN')">
+    <table sec:authorize="hasRole('ROLE_USER')">
         <tr>
             <td>Date</td>
             <td th:text="${timestamp}"/>

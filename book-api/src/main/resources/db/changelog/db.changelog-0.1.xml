@@ -8,17 +8,19 @@
                 <constraints primaryKey="true" primaryKeyName="book_pkey"/>
             </column>
             <column name="version" type="BIGINT"/>
-            <column name="author" type="VARCHAR(255)">
+            <column name="author" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
             <column name="available_copy_number" type="INTEGER"/>
             <column name="copy_number" type="INTEGER"/>
             <column name="description" type="VARCHAR(5000)"/>
-            <column name="isbn" type="VARCHAR(13)"/>
+            <column name="isbn" type="VARCHAR(13)">
+                <constraints nullable="false"/>
+            </column>
             <column name="name" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
-            <column name="publisher" type="VARCHAR(255)">
+            <column name="publisher" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
             <column name="release_date" type="date">

@@ -75,6 +75,13 @@
 			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
 		</dependency>
 
+		<!-- VALIDATION -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.1.2.Final</version>
+		</dependency>
+
 		<!-- UAA -->
 		<dependency>
 			<groupId>org.keycloak</groupId>
