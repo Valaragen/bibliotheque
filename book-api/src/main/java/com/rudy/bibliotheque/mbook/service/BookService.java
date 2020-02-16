@@ -2,6 +2,7 @@ package com.rudy.bibliotheque.mbook.service;
 
 import com.rudy.bibliotheque.mbook.model.Book;
 import com.rudy.bibliotheque.mbook.repository.BookRepository;
+import com.rudy.bibliotheque.mbook.search.BookSearch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,10 @@ public class BookService {
      */
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
+    }
+
+    public List<Book> getBooksBySearch(BookSearch bookSearch) {
+        return bookRepository.findAllBySearch(bookSearch);
     }
 
     /**

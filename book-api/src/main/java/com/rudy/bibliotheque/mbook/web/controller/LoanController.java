@@ -18,9 +18,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -71,6 +68,7 @@ public class LoanController {
     public List<Borrow> getLoansByCurrentUser(){
         return borrowService.getAllLoansByUserId(getUserIdFromToken());
     }
+
 
     @PreAuthorize("hasRole('" + Constant.USER_ROLE_NAME + "')")
     @PostMapping(Constant.USERS_PATH)

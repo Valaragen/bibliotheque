@@ -7,14 +7,47 @@
     <title>Accueil - Bibliothèque</title>
 </head>
 <body>
-<main role="main" class="container-fluid mt-1">
+<main role="main" class="container mt-1">
     <h1 class="text-center mt-3">Bibliotheque</h1>
-    <form class="col-12 col-sm-10 col-md-8 col-lg-7 m-auto form-inline my-2 my-lg-0"
-          id="homepage-searchForm" action="/books" method="GET">
-        <h2 class="mt-5">Rechercher un livre</h2>
-        <input class="form-control col-9" id="name"
-               type="text" placeholder="Nom du livre" aria-label="Search">
-        <button class="btn btn-primary col-3" type="submit">Rechercher</button>
+    <form class="my-2 px-3 pt-3" th:action="@{/books}" method="GET" th:object="${bookSearch}">
+        <div class="form-row">
+            <div class="col-5 form-group ml-auto">
+                <label class="sr-only" for="name">Titre</label>
+                <input class="form-control" id="name" type="text" th:field="*{name}" placeholder="Titre"
+                       th:value="*{name}">
+            </div>
+            <div class="col-4 form-group">
+                <label class="sr-only" for="author">Auteur</label>
+                <input class="form-control"
+                       id="author"
+                       type="text" th:field="*{author}" placeholder="Auteur"
+                       th:value="*{author}">
+            </div>
+            <div class="col-auto mr-auto">
+                <button class="btn btn-primary d-lg-block d-none" type="submit">Rechercher</button>
+                <button class="btn btn-primary d-lg-none d-block" type="submit"><i class="fas fa-search"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="collapse" id="collapseFilter">
+
+            <div class="form-row">
+                <div class="col-4 form-group">
+                    <label class="sr-only" for="isbn">ISBN</label>
+                    <input class="form-control" id="isbn" type="text" th:field="*{isbn}" placeholder="ISBN"
+                           th:value="*{isbn}">
+                </div>
+                <div class="col-3 form-group">
+                    <label class="sr-only" for="publisher">Editeur</label>
+                    <input class="form-control"
+                           id="publisher"
+                           type="text" th:field="*{publisher}" placeholder="Editeur"
+                           th:value="*{publisher}">
+                </div>
+            </div>
+        </div>
     </form>
 </main>
 </body>

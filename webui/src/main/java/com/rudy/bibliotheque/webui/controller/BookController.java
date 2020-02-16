@@ -1,6 +1,7 @@
 package com.rudy.bibliotheque.webui.controller;
 
 import com.rudy.bibliotheque.webui.dto.BookDTO;
+import com.rudy.bibliotheque.webui.dto.BookSearchDTO;
 import com.rudy.bibliotheque.webui.proxies.BookApiProxy;
 import com.rudy.bibliotheque.webui.util.Constant;
 import org.slf4j.Logger;
@@ -32,8 +33,11 @@ public class BookController {
     }
 
     @GetMapping
-    public String getBooksPage(Model model) {
-        model.addAttribute("books", bookApiProxy.getAllBooks());
+    public String getBooksPage(@ModelAttribute("bookSearch") BookSearchDTO bookSearchDTO, Model model) {
+        if(!model.containsAttribute("bookSearch")) {
+            model.addAttribute("bookSearch", bookSearchDTO);
+        }
+        model.addAttribute("books", bookApiProxy.getAllBooks(bookSearchDTO));
         return Constant.BOOKS_LIST_PAGE;
     }
 
@@ -54,7 +58,7 @@ public class BookController {
 
     @PreAuthorize("hasRole('" + Constant.STAFF_ROLE_NAME + "')")
     @PostMapping
-    public String submitBookAdd(@Valid @ModelAttribute("Book") BookDTO bookDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String submitBookAdd(@Valid @ModelAttribute("book") BookDTO bookDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.book", bindingResult);
@@ -80,7 +84,7 @@ public class BookController {
 
     @PreAuthorize("hasRole('" + Constant.STAFF_ROLE_NAME + "')")
     @PostMapping(Constant.SLASH_ID_PATH)
-    public String submitBookModify(@PathVariable Long id, @Valid @ModelAttribute("Book") BookDTO bookDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String submitBookModify(@PathVariable Long id, @Valid @ModelAttribute("book") BookDTO bookDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.book", bindingResult);
             redirectAttributes.addFlashAttribute("book", bookDTO);

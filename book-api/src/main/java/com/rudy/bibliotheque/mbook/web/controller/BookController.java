@@ -1,6 +1,7 @@
 package com.rudy.bibliotheque.mbook.web.controller;
 
 import com.rudy.bibliotheque.mbook.config.ApplicationPropertiesConfig;
+import com.rudy.bibliotheque.mbook.search.BookSearch;
 import com.rudy.bibliotheque.mbook.web.exception.BookNotFoundException;
 import com.rudy.bibliotheque.mbook.util.Constant;
 import com.rudy.bibliotheque.mbook.model.Book;
@@ -37,11 +38,9 @@ public class BookController {
      * @return List of books from the database
      */
     @GetMapping
-    public List<Book> getAllBooks(HttpServletRequest request) {
-        List<Book> books = bookService.getAllBooks();
-        if (books.isEmpty()) throw new BookNotFoundException();
+    public List<Book> getAllBooks(BookSearch bookSearch) {
 
-        return books;
+        return bookService.getBooksBySearch(bookSearch);
     }
 
     /**

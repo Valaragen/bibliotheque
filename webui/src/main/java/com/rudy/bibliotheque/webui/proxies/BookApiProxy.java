@@ -1,10 +1,12 @@
 package com.rudy.bibliotheque.webui.proxies;
 
 import com.rudy.bibliotheque.webui.dto.BookDTO;
+import com.rudy.bibliotheque.webui.dto.BookSearchDTO;
 import com.rudy.bibliotheque.webui.dto.BorrowDTO;
 import com.rudy.bibliotheque.webui.util.Constant;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +18,7 @@ import java.util.List;
 public interface BookApiProxy {
 
     @GetMapping(Constant.BOOKS_PATH)
-    List<BookDTO> getAllBooks();
+    List<BookDTO> getAllBooks(@SpringQueryMap BookSearchDTO bookSearchDTO);
 
     @GetMapping(Constant.LOANS_PATH)
     List<BorrowDTO> getAllLoans();

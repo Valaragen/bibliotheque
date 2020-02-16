@@ -8,8 +8,9 @@
 </head>
 <body>
 <main role="main" class="container-fluid mt-1">
-    <h1>Emprunts</h1>
-    <table class="table table-hover table-black bg-white" th:if="${!#lists.isEmpty(loans)}">
+    <h1>Mes Emprunts</h1>
+    <h4>Emprunts en cours</h4>
+    <table class="table table-hover table-black bg-white" th:if="${!#lists.isEmpty(currentLoans)}">
         <tr class="thead-dark">
             <th scope="col">Nom du livre</th>
             <th scope="col">Code</th>
@@ -17,27 +18,27 @@
             <th scope="col">Date limite de rendu</th>
             <th scope="col">Actions</th>
         </tr>
-        <tr th:each="loan : ${loans}">
-            <th th:text="${loan.bookCopy.id.book.name}"></th>
-            <th th:text="${loan.bookCopy.id.code}"></th>
-            <td th:text="${#dates.format(loan.loanStartDate, 'dd/MM/yyyy')}"></td>
+        <tr th:each="currentLoan : ${currentLoans}">
+            <th th:text="${currentLoan.bookCopy.id.book.name}"></th>
+            <th th:text="${currentLoan.bookCopy.id.code}"></th>
+            <td th:text="${#dates.format(currentLoan.loanStartDate, 'dd/MM/yyyy')}"></td>
             <td>
-                <span th:text="${#dates.format(loan.loanEndDate, 'dd/MM/yyyy')}"></span>
-                <i th:if="${loan.loanEndDate.before(#dates.createNow())}"
+                <span th:text="${#dates.format(currentLoan.loanEndDate, 'dd/MM/yyyy')}"></span>
+                <i th:if="${currentLoan.loanEndDate.before(#dates.createNow())}"
                    class="fas fa-exclamation-triangle text-danger" data-container="body"
                    data-toggle="popover" data-placement="top" data-trigger="hover"
                    data-content="Date de rendu dépassée."></i>
             </td>
             <td>
-                <form th:id="${'loan-extend-' + loan.id}" th:unless="${loan.hasDurationExtended}"
-                      th:action="@{/loans/{id}/extend(id = ${loan.id})}" method="POST">
+                <form th:id="${'loan-extend-' + currentLoan.id}" th:unless="${currentLoan.hasDurationExtended}"
+                      th:action="@{/loans/{id}/extend(id = ${currentLoan.id})}" method="POST">
                     <button class="btn btn-primary" type="submit" data-container="body"
                             data-toggle="popover" data-placement="left" data-trigger="hover"
                             data-content="Prolonger le prêt en cours. Le prêt n’est prolongeable qu’une seule fois. La prolongation double la période de prêt initiale.">
                         <i class="fas fa-clock"></i>
                     </button>
                 </form>
-                <span class="d-inline-block" th:if="${loan.hasDurationExtended}"
+                <span class="d-inline-block" th:if="${currentLoan.hasDurationExtended}"
                       data-container="body" data-toggle="popover"
                       data-placement="left" data-trigger="hover"
                       data-content="L'emprunt à déjà été prolongé.">
@@ -49,7 +50,7 @@
             </td>
         </tr>
     </table>
-    <p th:if="${#lists.isEmpty(loans)}" class="display-4">
+    <p th:if="${#lists.isEmpty(currentLoans)}" class="display-4">
         Aucun emprunt en cours
     </p>
 </main>

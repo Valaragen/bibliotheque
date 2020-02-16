@@ -38,8 +38,8 @@ public class LoanController {
 
     @PreAuthorize("hasRole('"+ Constant.USER_ROLE_NAME +"')")
     @GetMapping(Constant.MY_LOANS_PATH)
-    public String getCurrentUserLoans(Model model) {
-        model.addAttribute("loans", bookApiProxy.getLoansByCurrentUser());
+    public String getUserLoans(Model model) {
+        model.addAttribute("currentLoans", bookApiProxy.getLoansByCurrentUser());
         return Constant.LOANS_USER_PAGE;
     }
 
