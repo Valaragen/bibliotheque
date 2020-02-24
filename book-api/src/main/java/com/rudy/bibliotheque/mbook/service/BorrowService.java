@@ -3,6 +3,7 @@ package com.rudy.bibliotheque.mbook.service;
 import com.rudy.bibliotheque.mbook.model.Book;
 import com.rudy.bibliotheque.mbook.model.Borrow;
 import com.rudy.bibliotheque.mbook.repository.BorrowRepository;
+import com.rudy.bibliotheque.mbook.search.LoanSearch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,16 +25,12 @@ public class BorrowService {
         return borrowRepository.findAll();
     }
 
-    public List<Borrow> getAllLoansByUserId(String id) {
-        return borrowRepository.findByUserInfoId(id);
+    public List<Borrow> getLoansBySearch(LoanSearch loanSearch) {
+        return borrowRepository.findAllBySearch(loanSearch);
     }
 
     public Borrow getLoanById(Long id) {
         return borrowRepository.findById(id).orElse(null);
-    }
-
-    public List<Borrow> getAllNonReturnedExpiredLoans(Date date) {
-        return borrowRepository.findAllByReturnedOnIsNullAndLoanEndDateBefore(date);
     }
 
     public Borrow saveLoan(Borrow borrow){

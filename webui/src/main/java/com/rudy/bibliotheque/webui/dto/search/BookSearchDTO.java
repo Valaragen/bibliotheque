@@ -1,4 +1,4 @@
-package com.rudy.bibliotheque.webui.dto;
+package com.rudy.bibliotheque.webui.dto.search;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

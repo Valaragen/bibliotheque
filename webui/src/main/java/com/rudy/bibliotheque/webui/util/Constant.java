@@ -25,7 +25,10 @@ public class Constant {
 
     public static final String EXTEND_PATH = "/extend";
     public static final String MY_LOANS_PATH = "/my-loans";
-
+    public static final String ONGOING_PATH = "/ongoing";
+    public static final String PENDING_PATH = "/pending";
+    public static final String CURRENT_PATH = "/current";
+    public static final String SEARCH_PATH = "/search";
 
     //PAGES
     public static final String HOME_PAGE = "homePage";
@@ -39,5 +42,4 @@ public class Constant {
     //MESSAGE
     //Validation
     public static final String MSG_WRONG_ISBN_REGEX = "L''ISBN doit être un nombre de 10 ou 13 chiffres";
-
 }

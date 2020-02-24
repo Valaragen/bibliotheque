@@ -41,32 +41,32 @@ Un essai culte, couronné par le prix Hugo, le prix Locus et le grand prix de l'
 
     <changeSet id="mbook-002" author="rudy boinnard">
         <comment>Add some book copies</comment>
-        <insert tableName="book_copy">
+        <insert tableName="copy">
             <column name="version" value="1"/>
             <column name="book_id" valueComputed="(SELECT id FROM book WHERE isbn='9782226326034')"/>
             <column name="code" value="1"/>
             <column name="current_state" value="neuf"/>
-            <column name="is_borrowed" valueBoolean="true"/>
+            <column name="borrowed" valueBoolean="true"/>
             <column name="state_at_purchase" value="neuf"/>
         </insert>
 
-        <insert tableName="book_copy">
+        <insert tableName="copy">
             <column name="version" value="1"/>
             <column name="book_id" valueComputed="(SELECT id FROM book WHERE isbn='9782266126304')"/>
             <column name="code" value="1"/>
             <column name="current_state" value="neuf"/>
-            <column name="is_borrowed" valueBoolean="true"/>
+            <column name="borrowed" valueBoolean="true"/>
             <column name="state_at_purchase" value="neuf"/>
         </insert>
     </changeSet>
 
     <changeSet id="mbook-003" author="rudy boinnard">
-        <comment>Add an expired borrow and a not expired one</comment>
+        <comment>Add a test user</comment>
         <insert tableName="user_info">
             <column name="version" value="1"/>
             <column name="id" value="ed2afb4e-c552-47e9-9fab-48b59cd544b1"/>
             <column name="username" value="user"/>
-            <column name="email" value="user@gmail.com"/>
+            <column name="email" value="valaragen@gmail.com"/>
             <column name="firstname" value="useri"/>
             <column name="lastname" value="usero"/>
         </insert>
@@ -79,8 +79,8 @@ Un essai culte, couronné par le prix Hugo, le prix Locus et le grand prix de l'
             <column name="user_info_id" value="ed2afb4e-c552-47e9-9fab-48b59cd544b1"/>
             <column name="loan_request_date" valueDate="2020-01-01"/>
             <column name="deadline_to_retrieve" valueDate="2020-01-02"/>
-            <column name="book_copy_book_id" valueComputed="(SELECT id FROM book WHERE isbn='9782226326034')"/>
-            <column name="book_copy_code" value="1"/>
+            <column name="copy_book_id" valueComputed="(SELECT id FROM book WHERE isbn='9782226326034')"/>
+            <column name="copy_code" value="1"/>
             <column name="has_duration_extended" valueBoolean="false"/>
             <column name="loan_start_date" valueDate="2020-01-01"/>
             <column name="loan_end_date" valueDate="2020-01-14"/>
@@ -92,8 +92,8 @@ Un essai culte, couronné par le prix Hugo, le prix Locus et le grand prix de l'
             <column name="user_info_id" value="ed2afb4e-c552-47e9-9fab-48b59cd544b1"/>
             <column name="loan_request_date" valueDate="2020-01-01"/>
             <column name="deadline_to_retrieve" valueDate="2020-01-02"/>
-            <column name="book_copy_book_id" valueComputed="(SELECT id FROM book WHERE isbn='9782266126304')"/>
-            <column name="book_copy_code" value="1"/>
+            <column name="copy_book_id" valueComputed="(SELECT id FROM book WHERE isbn='9782266126304')"/>
+            <column name="copy_code" value="1"/>
             <column name="has_duration_extended" valueBoolean="false"/>
             <column name="loan_start_date" valueDate="2020-01-27"/>
             <column name="loan_end_date" valueDate="2020-02-30"/>

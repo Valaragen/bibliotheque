@@ -1,10 +1,12 @@
 package com.rudy.bibliotheque.batch.config;
 
-import com.rudy.bibliotheque.batch.DTO.BorrowDTO;
+import com.rudy.bibliotheque.batch.dto.BorrowDTO;
+import com.rudy.bibliotheque.batch.dto.search.LoanSearchDTO;
 import com.rudy.bibliotheque.batch.processing.BorrowItemProcessor;
 import com.rudy.bibliotheque.batch.processing.JobCompletionNotificationListener;
 import com.rudy.bibliotheque.batch.processing.MailBatchItemWriter;
 import com.rudy.bibliotheque.batch.proxy.BookApiProxy;
+import com.rudy.bibliotheque.batch.util.Constant;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.Step;
@@ -49,7 +51,11 @@ public class BatchConfiguration {
 
     @Bean
     public ItemReader<BorrowDTO> reader() {
-        return new ListItemReader<>(bookApiProxy.getAllNonReturnedExpiredLoans());
+        LoanSearchDTO loanSearchDTO = new LoanSearchDTO();
+        List<String> status = new ArrayList<>();
+        status.add(Constant.LOAN_STATUS_LATE);
+        loanSearchDTO.setStatus(status);
+        return new ListItemReader<>(bookApiProxy.getAllLoans(loanSearchDTO));
     }
 
     @Bean

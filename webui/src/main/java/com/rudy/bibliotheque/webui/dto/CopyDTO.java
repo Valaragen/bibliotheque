@@ -13,11 +13,11 @@ import java.util.Date;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BookCopyDTO {
+public class CopyDTO {
 
     private BookCopyDTOId id;
 
     private String stateAtPurchase;
     private String currentState;
-    private boolean isBorrowed;
+    private boolean borrowed;
 }

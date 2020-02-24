@@ -14,7 +14,7 @@ import java.util.Date;
 @Entity
 public class Borrow extends AbstractEntity {
     @ManyToOne
-    private BookCopy bookCopy;
+    private Copy copy;
 
     @ManyToOne
     private UserInfo userInfo;
@@ -45,6 +45,7 @@ public class Borrow extends AbstractEntity {
     @Temporal(TemporalType.DATE)
     private Date returnedOn;
 
+    @Column(nullable = false)
     private String stateBeforeBorrow;
 
     private String stateAfterBorrow;

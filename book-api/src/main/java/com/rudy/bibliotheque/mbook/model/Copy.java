@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-public class BookCopy extends AbstractEntityComposedId {
+public class Copy extends AbstractEntityComposedId {
 
     @EmbeddedId
     private BookCopyId id;
@@ -23,6 +23,6 @@ public class BookCopy extends AbstractEntityComposedId {
     private String currentState;
 
     @Column(nullable = false)
-    private boolean isBorrowed;
+    private boolean borrowed;
 
 }

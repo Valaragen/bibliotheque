@@ -15,9 +15,11 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Embeddable
 public class BookCopyId implements Serializable {
-    @Column
+
+    @Column(nullable = false)
     private String code;
 
     @ManyToOne
     private Book book;
+
 }

@@ -1,6 +1,6 @@
 package com.rudy.bibliotheque.batch.processing;
 
-import com.rudy.bibliotheque.batch.DTO.BorrowDTO;
+import com.rudy.bibliotheque.batch.dto.BorrowDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
@@ -36,15 +36,15 @@ public class BorrowItemProcessor implements ItemProcessor<BorrowDTO, MimeMessage
     public MimeMessage process(BorrowDTO borrowDTO) throws Exception {
         // Prepare the evaluation context
         final Context ctx = new Context(Locale.FRANCE);
-        ctx.setVariable("bookName", borrowDTO.getBookName());
-        ctx.setVariable("username", borrowDTO.getUserUsername());
+        ctx.setVariable("bookName", borrowDTO.getCopy().getId().getBook().getName());
+        ctx.setVariable("username", borrowDTO.getUserInfo().getUsername());
         ctx.setVariable("loanEndDate", borrowDTO.getLoanEndDate());
 
         final MimeMessage message = mailSender.createMimeMessage();
         final MimeMessageHelper helper = new MimeMessageHelper(message, true , "UTF-8");
 
         helper.setFrom(sender);
-        helper.setTo(borrowDTO.getUserEmail());
+        helper.setTo(borrowDTO.getUserInfo().getEmail());
         helper.setCc(sender);
 
         // Create the TEXT subject using Thymeleaf
@@ -55,7 +55,7 @@ public class BorrowItemProcessor implements ItemProcessor<BorrowDTO, MimeMessage
         final String htmlContent = this.templateEngine.process("email-body.html", ctx);
         helper.setText(htmlContent, true); // true = isHtml
 
-        log.info("Preparing message for: " + borrowDTO.getUserEmail());
+        log.info("Preparing message for: " + borrowDTO.getUserInfo().getEmail());
 
         return message;
     }

@@ -1,8 +1,10 @@
 package com.rudy.bibliotheque.webui.proxies;
 
 import com.rudy.bibliotheque.webui.dto.BookDTO;
-import com.rudy.bibliotheque.webui.dto.BookSearchDTO;
+import com.rudy.bibliotheque.webui.dto.LoanCreateDTO;
+import com.rudy.bibliotheque.webui.dto.search.BookSearchDTO;
 import com.rudy.bibliotheque.webui.dto.BorrowDTO;
+import com.rudy.bibliotheque.webui.dto.search.LoanSearchDTO;
 import com.rudy.bibliotheque.webui.util.Constant;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -21,10 +23,13 @@ public interface BookApiProxy {
     List<BookDTO> getAllBooks(@SpringQueryMap BookSearchDTO bookSearchDTO);
 
     @GetMapping(Constant.LOANS_PATH)
-    List<BorrowDTO> getAllLoans();
+    List<BorrowDTO> getAllLoans(@SpringQueryMap LoanSearchDTO loanSearchDTO);
 
-    @GetMapping(Constant.LOANS_PATH + Constant.USERS_PATH + "/current")
-    List<BorrowDTO> getLoansByCurrentUser();
+    @GetMapping(Constant.USERS_PATH + Constant.CURRENT_PATH + Constant.LOANS_PATH)
+    List<BorrowDTO> getLoansOfCurrentUser(@SpringQueryMap LoanSearchDTO loanSearchDTO);
+
+    @PostMapping(Constant.USERS_PATH + Constant.CURRENT_PATH + Constant.LOANS_PATH)
+    ResponseEntity<BorrowDTO> createLoanForCurrentUser(@RequestBody LoanCreateDTO loanCreateDTO);
 
     @PostMapping(Constant.BOOKS_PATH)
     ResponseEntity<BookDTO> saveBookInDatabase(@RequestBody BookDTO bookDTO);
@@ -38,7 +43,7 @@ public interface BookApiProxy {
     @DeleteMapping(Constant.BOOKS_PATH + Constant.SLASH_ID_PATH)
     ResponseEntity<BookDTO> deleteBook(@PathVariable("id") Long id);
 
-    @PutMapping(Constant.LOANS_PATH + Constant.SLASH_ID_PATH + Constant.EXTEND_PATH)
+    @PutMapping(Constant.USERS_PATH + Constant.CURRENT_PATH + Constant.LOANS_PATH + Constant.SLASH_ID_PATH + Constant.EXTEND_PATH)
     ResponseEntity<BorrowDTO> extendMyLoan(@PathVariable Long id);
 
 }

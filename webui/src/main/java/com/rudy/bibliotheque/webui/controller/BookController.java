@@ -1,7 +1,7 @@
 package com.rudy.bibliotheque.webui.controller;
 
 import com.rudy.bibliotheque.webui.dto.BookDTO;
-import com.rudy.bibliotheque.webui.dto.BookSearchDTO;
+import com.rudy.bibliotheque.webui.dto.search.BookSearchDTO;
 import com.rudy.bibliotheque.webui.proxies.BookApiProxy;
 import com.rudy.bibliotheque.webui.util.Constant;
 import org.slf4j.Logger;

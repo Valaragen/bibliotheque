@@ -1,6 +1,6 @@
 package com.rudy.bibliotheque.webui.controller;
 
-import com.rudy.bibliotheque.webui.dto.BookSearchDTO;
+import com.rudy.bibliotheque.webui.dto.search.BookSearchDTO;
 import com.rudy.bibliotheque.webui.util.Constant;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
