@@ -90,9 +90,9 @@ public class LoanController {
                     Date today = new Date();
                     if (loan.getLoanEndDate().before(today)) {
                         lateLoans.add(loan);
-                    } else {
-                        finishedLoans.add(loan);
                     }
+                } else {
+                    finishedLoans.add(loan);
                 }
             }
         }

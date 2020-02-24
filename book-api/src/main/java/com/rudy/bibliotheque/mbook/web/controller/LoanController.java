@@ -79,4 +79,39 @@ public class LoanController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    /**
+     * Get all the loans from the database
+     * @return List of loans that contains useful informations about the related book and user
+     */
+    @PreAuthorize("hasRole('"+ Constant.STAFF_ROLE_NAME +"')")
+    @PutMapping(Constant.SLASH_ID_PATH + Constant.RETURNED_PATH)
+    public ResponseEntity<Borrow> saveALoanReturn(@PathVariable Long id, @RequestBody Borrow borrowAdditionalInfos) {
+        Borrow borrow = borrowService.getLoanById(id);
+        if (borrow == null) {
+            throw new NotFoundException("Can't find loan with id " + id);
+        }
+        if (borrow.getLoanStartDate() == null) {
+            throw new ProhibitedActionException("This loan is in pending state");
+        }
+        if (borrow.getReturnedOn() != null) {
+            throw new ProhibitedActionException("This loan is already returned");
+        }
+
+        //create borrow request process
+        Date today = new Date();
+        borrow.setReturnedOn(today);
+        if (borrowAdditionalInfos.getStateAfterBorrow() != null) {
+            borrow.setStateAfterBorrow(borrowAdditionalInfos.getStateAfterBorrow());
+        } else {
+            borrow.setStateAfterBorrow(borrow.getStateBeforeBorrow());
+        }
+
+        Borrow newBorrow = borrowService.saveLoan(borrow);
+
+        if (newBorrow == null) throw new CRUDIssueException("Can't' update loan");
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    //TODO add endpoint to create a loan for an user
+
 }

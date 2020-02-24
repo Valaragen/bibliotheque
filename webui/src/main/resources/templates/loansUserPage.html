@@ -72,6 +72,27 @@
     <p th:if="${#lists.isEmpty(ongoingLoans)}" class="display-4">
         Aucun emprunt en cours
     </p>
+    <div th:if="${!#lists.isEmpty(finishedLoans)}">
+        <h4>Emprunts terminés</h4>
+        <table class="table table-hover table-black bg-white">
+            <tr class="thead-dark">
+                <th scope="col">Id</th>
+                <th scope="col">Nom du livre</th>
+                <th scope="col">Code</th>
+                <th scope="col">Emprunté le</th>
+                <th scope="col">Date limite de rendu</th>
+                <th scope="col">Rendu le</th>
+            </tr>
+            <tr th:each="finishedLoan : ${finishedLoans}">
+                <th th:text="${finishedLoan.id}"></th>
+                <th th:text="${finishedLoan.copy.id.book.name}"></th>
+                <th th:text="${finishedLoan.copy.id.code}"></th>
+                <td th:text="${#dates.format(finishedLoan.loanStartDate, 'dd/MM/yyyy')}"></td>
+                <td th:text="${#dates.format(finishedLoan.loanEndDate, 'dd/MM/yyyy')}"></td>
+                <td th:text="${#dates.format(finishedLoan.returnedOn, 'dd/MM/yyyy')}"></td>
+            </tr>
+        </table>
+    </div>
 </main>
 
 <div class="additional-scripts">
