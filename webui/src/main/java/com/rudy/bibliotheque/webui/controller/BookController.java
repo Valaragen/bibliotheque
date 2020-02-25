@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(Constant.BOOKS_PATH)
@@ -37,7 +38,7 @@ public class BookController {
         if(!model.containsAttribute("bookSearch")) {
             model.addAttribute("bookSearch", bookSearchDTO);
         }
-        model.addAttribute("books", bookApiProxy.getAllBooks(bookSearchDTO));
+        model.addAttribute("books", bookApiProxy.getAllBooks(bookSearchDTO).stream().filter(e->e.getAvailableCopyNumber()>0).collect(Collectors.toList()));
         return Constant.BOOKS_LIST_PAGE;
     }
 

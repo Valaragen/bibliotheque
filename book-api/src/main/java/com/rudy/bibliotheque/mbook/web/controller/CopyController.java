@@ -4,7 +4,6 @@ import com.rudy.bibliotheque.mbook.config.ApplicationPropertiesConfig;
 import com.rudy.bibliotheque.mbook.dto.CopyCreateDTO;
 import com.rudy.bibliotheque.mbook.model.Book;
 import com.rudy.bibliotheque.mbook.model.Copy;
-import com.rudy.bibliotheque.mbook.model.composedId.BookCopyId;
 import com.rudy.bibliotheque.mbook.service.BookService;
 import com.rudy.bibliotheque.mbook.service.CopyService;
 import com.rudy.bibliotheque.mbook.util.Constant;
@@ -18,8 +17,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.InvocationTargetException;
-import java.sql.Timestamp;
-import java.time.Instant;
 import java.util.List;
 
 /**
@@ -51,14 +48,9 @@ public class CopyController {
         return copyService.getAllCopies();
     }
 
-    @GetMapping(Constant.BOOKS_PATH + Constant.SLASH_ID_PATH + Constant.COPY_CODE_PATH + Constant.SLASH_STRING_PATH)
+    @GetMapping(Constant.SLASH_STRING_PATH)
     public Copy getCopyByComposedId(@PathVariable Long id, @PathVariable String string) {
-        return copyService.getCopyByComposedId(string, id);
-    }
-
-    @GetMapping(Constant.BOOKS_PATH + Constant.SLASH_ID_PATH)
-    public Copy getCopyByBookId(@PathVariable Long id) {
-        return copyService.getCopyByBookId(id);
+        return copyService.getCopyById(string);
     }
 
     @PostMapping
@@ -69,11 +61,11 @@ public class CopyController {
         if (linkedBook == null) {
             throw new NotFoundException("Can't find book with id " + copyCreateDTO.getBookId());
         }
-        newCopy.setId(new BookCopyId(copyService.generateCode(), linkedBook));
+        newCopy.setCode(copyService.generateCode());
 
-        Book currentBook = newCopy.getId().getBook();
-        newCopy.getId().getBook().setCopyNumber(currentBook.getCopyNumber() + 1);
-        newCopy.getId().getBook().setAvailableCopyNumber(currentBook.getAvailableCopyNumber() + 1);
+        Book currentBook = newCopy.getBook();
+        newCopy.getBook().setCopyNumber(currentBook.getCopyNumber() + 1);
+        newCopy.getBook().setAvailableCopyNumber(currentBook.getAvailableCopyNumber() + 1);
 
         //Bind fields
         newCopy.setStateAtPurchase(copyCreateDTO.getStateAtPurchase());
@@ -84,9 +76,9 @@ public class CopyController {
         return new ResponseEntity<>(newBook, HttpStatus.CREATED);
     }
 
-    @PutMapping(Constant.BOOKS_PATH + Constant.SLASH_ID_PATH + Constant.COPY_CODE_PATH + Constant.SLASH_STRING_PATH)
-    public ResponseEntity<Copy> updateCopy(@PathVariable Long id, @PathVariable String string, @RequestBody Copy copy) throws InvocationTargetException, IllegalAccessException {
-        Copy currentCopy = copyService.getCopyByComposedId(string, id);
+    @PutMapping(Constant.SLASH_STRING_PATH)
+    public ResponseEntity<Copy> updateCopy(@PathVariable String string, @RequestBody Copy copy) throws InvocationTargetException, IllegalAccessException {
+        Copy currentCopy = copyService.getCopyById(string);
         BeanUtilsBean notNull = new NullAwareBeanUtilsBean();
         notNull.copyProperties(currentCopy, copy);
 

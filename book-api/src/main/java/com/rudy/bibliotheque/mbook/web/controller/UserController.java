@@ -1,6 +1,5 @@
 package com.rudy.bibliotheque.mbook.web.controller;
 
-import com.rudy.bibliotheque.mbook.config.ApplicationPropertiesConfig;
 import com.rudy.bibliotheque.mbook.dto.LoanCreateDTO;
 import com.rudy.bibliotheque.mbook.model.Borrow;
 import com.rudy.bibliotheque.mbook.model.Copy;
@@ -62,22 +61,21 @@ public class UserController {
     @PostMapping(Constant.CURRENT_PATH + Constant.LOANS_PATH)
     public ResponseEntity<Borrow> createLoanForCurrentUser(@RequestBody LoanCreateDTO loanCreateDTO) {
         log.info("Start method createLoanForCurrentUser");
-        Borrow borrow = new Borrow();
-        //link the copy
+        loanCreateDTO.setUserId(ControllerUtil.getUserIdFromToken());
+
         if (loanCreateDTO.getBookId() == null) {
             throw new InvalidIdException("Book code has not been provided");
         }
+        //link the copy
         Copy linkedCopy = copyService.getAnAvailableCopyByBookId(loanCreateDTO.getBookId());
         if (linkedCopy == null) {
             throw new NotFoundException("No copy available for book with id " + loanCreateDTO.getBookId());
         }
 
-        linkedCopy.setBorrowed(true);
-        linkedCopy.getId().getBook().setAvailableCopyNumber(linkedCopy.getId().getBook().getAvailableCopyNumber() - 1);
-
+        Borrow borrow = new Borrow();
         borrow.setCopy(linkedCopy);
         log.debug("Copy linked to the loan");
-        UserInfo linkedUserInfo = userInfoService.getUserInfoById(ControllerUtil.getUserIdFromToken());
+        UserInfo linkedUserInfo = userInfoService.getUserInfoById(loanCreateDTO.getUserId());
         if (linkedUserInfo == null) {
             //link the userInfos
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -88,23 +86,19 @@ public class UserController {
             linkedUserInfo.setId(token.getSubject());
             linkedUserInfo.setUsername(token.getPreferredUsername());
             linkedUserInfo.setEmail(token.getEmail());
-            linkedUserInfo.setFirstname(token.getGivenName());
-            linkedUserInfo.setLastname(token.getFamilyName());
+            linkedUserInfo.setFirstName(token.getGivenName());
+            linkedUserInfo.setLastName(token.getFamilyName());
             linkedUserInfo.setPhone(token.getPhoneNumber());
+            linkedUserInfo = userInfoService.saveUserInfo(linkedUserInfo);
+            if (linkedUserInfo == null) {
+                throw new CRUDIssueException("Can't create user_info entity");
+            }
         }
 
         borrow.setUserInfo(linkedUserInfo);
         log.debug("User linked to the loan");
 
-        //create borrow request process
-        Date today = new Date();
-        borrow.setStateBeforeBorrow(borrow.getCopy().getCurrentState());
-        borrow.setLoanRequestDate(today);
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(today);
-        calendar.add(Calendar.DATE, 1);
-        borrow.setDeadlineToRetrieve(calendar.getTime());
+        LoanController.loanToPendingLogic(borrow);
 
         Borrow newBorrow = borrowService.saveLoan(borrow);
         if (newBorrow == null) throw new CRUDIssueException("Can't' create loan");

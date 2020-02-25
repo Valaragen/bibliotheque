@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface CopyRepository extends JpaRepository<Copy, Long> {
-    Optional<Copy> findByIdCodeAndIdBookId(String code, Long id);
-    Optional<Copy> findByIdBookId(Long id);
-    Optional<Copy> findFirstByIdBookIdAndBorrowedIsFalse(Long id);
+public interface CopyRepository extends JpaRepository<Copy, String> {
+    Optional<Copy> findByBookId(Long id);
+    Optional<Copy> findFirstByBookIdAndBorrowedIsFalse(Long id);
 }

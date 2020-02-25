@@ -70,8 +70,9 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <div class="card-title">
-                        <h5 class="d-inline-block" th:text="${book.name}">Card title</h5><small
-                            class="ml-3 d-inline-block text-muted" th:text="${book.author}"></small>
+                        <h5 class="d-inline-block" th:text="${book.name}">Card title</h5>
+                        <small class="ml-3 d-inline-block text-muted" th:text="${book.author}"></small>
+                        <span class="badge badge-primary ml-3" th:text="${'NB exemplaire(s): ' + book.availableCopyNumber}">Primary</span>
                     </div>
                     <p class="card-text text-justify text-4-line-truncate" th:text="${book.description}"></p>
                     <a class="btn btn-primary" th:href="@{/books/{id}(id=${book.id})}" role="button">Consulter</a>

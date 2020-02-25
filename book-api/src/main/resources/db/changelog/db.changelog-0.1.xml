@@ -2,7 +2,7 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-    <changeSet author="Rudy (generated)" id="1582500668487-1">
+    <changeSet author="Rudy (generated)" id="1582585994731-1">
         <createTable tableName="book">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true" primaryKeyName="book_pkey"/>
@@ -28,7 +28,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Rudy (generated)" id="1582500668487-2">
+    <changeSet author="Rudy (generated)" id="1582585994731-2">
         <createTable tableName="borrow">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true" primaryKeyName="borrow_pkey"/>
@@ -50,12 +50,11 @@
             <column name="state_before_borrow" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="copy_book_id" type="BIGINT"/>
             <column name="copy_code" type="VARCHAR(255)"/>
             <column name="user_info_id" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet author="Rudy (generated)" id="1582500668487-3">
+    <changeSet author="Rudy (generated)" id="1582585994731-3">
         <createTable tableName="copy">
             <column name="code" type="VARCHAR(255)">
                 <constraints primaryKey="true" primaryKeyName="copy_pkey"/>
@@ -70,39 +69,37 @@
             <column name="state_at_purchase" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="book_id" type="BIGINT">
-                <constraints primaryKey="true" primaryKeyName="copy_pkey"/>
-            </column>
+            <column name="book_id" type="BIGINT"/>
         </createTable>
     </changeSet>
-    <changeSet author="Rudy (generated)" id="1582500668487-4">
+    <changeSet author="Rudy (generated)" id="1582585994731-4">
         <createTable tableName="user_info">
             <column name="id" type="VARCHAR(255)">
                 <constraints primaryKey="true" primaryKeyName="user_info_pkey"/>
             </column>
             <column name="version" type="BIGINT"/>
-            <column name="adress" type="VARCHAR(255)"/>
+            <column name="address" type="VARCHAR(255)"/>
             <column name="email" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="firstname" type="VARCHAR(255)"/>
-            <column name="lastname" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
             <column name="phone" type="VARCHAR(255)"/>
             <column name="username" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Rudy (generated)" id="1582500668487-5">
+    <changeSet author="Rudy (generated)" id="1582585994731-5">
         <addUniqueConstraint columnNames="isbn" constraintName="uk_ehpdfjpu1jm3hijhj4mm0hx9h" tableName="book"/>
     </changeSet>
-    <changeSet author="Rudy (generated)" id="1582500668487-6">
-        <addForeignKeyConstraint baseColumnNames="copy_book_id,copy_code" baseTableName="borrow" constraintName="fk5de1e5ubed6312irfxqebq1xo" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="book_id,code" referencedTableName="copy" validate="true"/>
-    </changeSet>
-    <changeSet author="Rudy (generated)" id="1582500668487-7">
+    <changeSet author="Rudy (generated)" id="1582585994731-6">
         <addForeignKeyConstraint baseColumnNames="user_info_id" baseTableName="borrow" constraintName="fkaonds75bo5eg83ce2ckvoedba" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user_info" validate="true"/>
     </changeSet>
-    <changeSet author="Rudy (generated)" id="1582500668487-8">
+    <changeSet author="Rudy (generated)" id="1582585994731-7">
+        <addForeignKeyConstraint baseColumnNames="copy_code" baseTableName="borrow" constraintName="fke89k1fo4qjistykdsf2c2htxj" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="code" referencedTableName="copy" validate="true"/>
+    </changeSet>
+    <changeSet author="Rudy (generated)" id="1582585994731-8">
         <addForeignKeyConstraint baseColumnNames="book_id" baseTableName="copy" constraintName="fkof5k7k6c41i06j6fj3slgsmam" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="book" validate="true"/>
     </changeSet>
 </databaseChangeLog>

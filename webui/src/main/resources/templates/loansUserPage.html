@@ -10,22 +10,24 @@
 <main role="main" class="container-fluid mt-1">
     <h1>Mes Emprunts</h1>
     <div th:if="${!#lists.isEmpty(pendingLoans)}">
-        <h4>A récupérer :</h4>
+        <h4>A récupérer</h4>
         <table class="table table-hover table-black bg-white">
             <tr class="thead-dark">
                 <th scope="col">Id</th>
                 <th scope="col">Nom du livre</th>
-                <th scope="col">Data limite pour récupération</th>
+                <th scope="col">Code</th>
+                <th scope="col">Date limite pour récupération</th>
             </tr>
             <tr th:each="pendingLoan : ${pendingLoans}">
                 <th th:text="${pendingLoan.id}"></th>
-                <th th:text="${pendingLoan.copy.id.book.name}"></th>
+                <th th:text="${pendingLoan.copy.book.name}"></th>
+                <th th:text="${pendingLoan.copy.code}"></th>
                 <th th:text="${#dates.format(pendingLoan.deadlineToRetrieve, 'dd/MM/yyyy')}"></th>
             </tr>
         </table>
     </div>
+    <h4>Emprunts en cours</h4>
     <div th:if="${!#lists.isEmpty(ongoingLoans)}">
-        <h4>Emprunts en cours</h4>
         <table class="table table-hover table-black bg-white">
             <tr class="thead-dark">
                 <th scope="col">Id</th>
@@ -37,8 +39,8 @@
             </tr>
             <tr th:each="ongoingLoan : ${ongoingLoans}">
                 <th th:text="${ongoingLoan.id}"></th>
-                <th th:text="${ongoingLoan.copy.id.book.name}"></th>
-                <th th:text="${ongoingLoan.copy.id.code}"></th>
+                <th th:text="${ongoingLoan.copy.book.name}"></th>
+                <th th:text="${ongoingLoan.copy.code}"></th>
                 <td th:text="${#dates.format(ongoingLoan.loanStartDate, 'dd/MM/yyyy')}"></td>
                 <td>
                     <span th:text="${#dates.format(ongoingLoan.loanEndDate, 'dd/MM/yyyy')}"></span>
@@ -69,7 +71,7 @@
             </tr>
         </table>
     </div>
-    <p th:if="${#lists.isEmpty(ongoingLoans)}" class="display-4">
+    <p th:if="${#lists.isEmpty(ongoingLoans)}">
         Aucun emprunt en cours
     </p>
     <div th:if="${!#lists.isEmpty(finishedLoans)}">
@@ -85,8 +87,8 @@
             </tr>
             <tr th:each="finishedLoan : ${finishedLoans}">
                 <th th:text="${finishedLoan.id}"></th>
-                <th th:text="${finishedLoan.copy.id.book.name}"></th>
-                <th th:text="${finishedLoan.copy.id.code}"></th>
+                <th th:text="${finishedLoan.copy.book.name}"></th>
+                <th th:text="${finishedLoan.copy.code}"></th>
                 <td th:text="${#dates.format(finishedLoan.loanStartDate, 'dd/MM/yyyy')}"></td>
                 <td th:text="${#dates.format(finishedLoan.loanEndDate, 'dd/MM/yyyy')}"></td>
                 <td th:text="${#dates.format(finishedLoan.returnedOn, 'dd/MM/yyyy')}"></td>

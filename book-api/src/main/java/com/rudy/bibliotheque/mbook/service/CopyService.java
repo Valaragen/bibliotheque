@@ -21,12 +21,12 @@ public class CopyService {
         return copyRepository.findAll();
     }
 
-    public Copy getCopyByComposedId(String code, Long id) {
-        return copyRepository.findByIdCodeAndIdBookId(code, id).orElse(null);
+    public Copy getCopyById(String code) {
+        return copyRepository.findById(code).orElse(null);
     }
 
     public Copy getCopyByBookId(Long id) {
-        return copyRepository.findByIdBookId(id).orElse(null);
+        return copyRepository.findByBookId(id).orElse(null);
     }
 
     public Copy saveCopy(Copy copy) {
@@ -40,6 +40,6 @@ public class CopyService {
     }
 
     public Copy getAnAvailableCopyByBookId(Long id) {
-        return copyRepository.findFirstByIdBookIdAndBorrowedIsFalse(id).orElse(null);
+        return copyRepository.findFirstByBookIdAndBorrowedIsFalse(id).orElse(null);
     }
 }

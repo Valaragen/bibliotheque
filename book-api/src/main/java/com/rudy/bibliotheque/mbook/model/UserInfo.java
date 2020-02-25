@@ -22,11 +22,11 @@ public class UserInfo extends AbstractEntityComposedId {
     @Column(nullable = false)
     private String email;
 
-    private String firstname;
+    private String firstName;
 
-    private String lastname;
+    private String lastName;
 
     private String phone;
 
-    private String adress;
+    private String address;
 }

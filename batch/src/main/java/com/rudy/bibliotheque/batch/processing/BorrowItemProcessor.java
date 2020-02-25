@@ -36,7 +36,7 @@ public class BorrowItemProcessor implements ItemProcessor<BorrowDTO, MimeMessage
     public MimeMessage process(BorrowDTO borrowDTO) throws Exception {
         // Prepare the evaluation context
         final Context ctx = new Context(Locale.FRANCE);
-        ctx.setVariable("bookName", borrowDTO.getCopy().getId().getBook().getName());
+        ctx.setVariable("bookName", borrowDTO.getCopy().getBook().getName());
         ctx.setVariable("username", borrowDTO.getUserInfo().getUsername());
         ctx.setVariable("loanEndDate", borrowDTO.getLoanEndDate());
 
