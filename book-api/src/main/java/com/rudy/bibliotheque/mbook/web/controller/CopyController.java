@@ -14,6 +14,7 @@ import org.apache.commons.beanutils.BeanUtilsBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.InvocationTargetException;
@@ -43,16 +44,19 @@ public class CopyController {
      *
      * @return List of books from the database
      */
+    @PreAuthorize("hasRole('" + Constant.STAFF_ROLE_NAME + "')")
     @GetMapping
     public List<Copy> getAllCopies() {
         return copyService.getAllCopies();
     }
 
+    @PreAuthorize("hasRole('" + Constant.STAFF_ROLE_NAME + "')")
     @GetMapping(Constant.SLASH_STRING_PATH)
-    public Copy getCopyByComposedId(@PathVariable Long id, @PathVariable String string) {
+    public Copy getCopyByCode(@PathVariable Long id, @PathVariable String string) {
         return copyService.getCopyById(string);
     }
 
+    @PreAuthorize("hasRole('" + Constant.STAFF_ROLE_NAME + "')")
     @PostMapping
     public ResponseEntity<Copy> saveCopyInDatabase(@RequestBody CopyCreateDTO copyCreateDTO) {
         Copy newCopy = new Copy();
@@ -76,6 +80,7 @@ public class CopyController {
         return new ResponseEntity<>(newBook, HttpStatus.CREATED);
     }
 
+    @PreAuthorize("hasRole('" + Constant.STAFF_ROLE_NAME + "')")
     @PutMapping(Constant.SLASH_STRING_PATH)
     public ResponseEntity<Copy> updateCopy(@PathVariable String string, @RequestBody Copy copy) throws InvocationTargetException, IllegalAccessException {
         Copy currentCopy = copyService.getCopyById(string);
