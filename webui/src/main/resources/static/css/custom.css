@@ -1,0 +1,20 @@
+.text-4-line-truncate {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.no-resize {
+    resize: none;
+}
+
+.h-100px {
+    height: 100px !important;
+}
+
+.top-right-btn {
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+}

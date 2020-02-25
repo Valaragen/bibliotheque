@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html th:replace="includes/layouts :: basicLayout(~{::title},~{::main},~{},~{})" lang="fr"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head>
+    <title>Livres - Bibliothèque</title>
+</head>
+<body>
+<main role="main" class="container mt-1">
+    <div sec:authorize="hasRole('ROLE_STAFF')" class="row no-gutters my-2">
+        <a class="btn btn-light ml-auto border-dark rounded-sm" th:href="@{/books/add}" role="button">
+            <i class="fas fa-plus mr-1"></i><span>Ajouter</span>
+        </a>
+    </div>
+
+    <form class="my-2 px-3 pt-3 border rounded bg-light" th:action="@{/books}" method="GET" th:object="${bookSearch}">
+        <div class="form-row">
+            <div class="col-5 form-group">
+                <label class="sr-only" for="name">Titre</label>
+                <input class="form-control" id="name" type="text" th:field="*{name}" placeholder="Titre"
+                       th:value="*{name}">
+            </div>
+            <div class="col-4 form-group">
+                <label class="sr-only" for="author">Auteur</label>
+                <input class="form-control"
+                       id="author"
+                       type="text" th:field="*{author}" placeholder="Auteur"
+                       th:value="*{author}">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary d-lg-block d-none" type="submit">Rechercher</button>
+                <button class="btn btn-primary d-lg-none d-block" type="submit"><i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="col-auto form-group">
+                <button class="btn btn-warning d-block" type="button" data-toggle="collapse"
+                        data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter"><i class="fas fa-plus"></i>
+                    <i class="fas fa-chevron-down fa-xs ml-2 d-none d-md-inline-block"></i></button>
+            </div>
+
+
+        </div>
+
+        <div class="collapse" id="collapseFilter">
+
+            <div class="form-row">
+                <div class="col-4 form-group">
+                    <label class="sr-only" for="isbn">ISBN</label>
+                    <input class="form-control" id="isbn" type="text" th:field="*{isbn}" placeholder="ISBN"
+                           th:value="*{isbn}">
+                </div>
+                <div class="col-3 form-group">
+                    <label class="sr-only" for="publisher">Editeur</label>
+                    <input class="form-control"
+                           id="publisher"
+                           type="text" th:field="*{publisher}" placeholder="Editeur"
+                           th:value="*{publisher}">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="card mb-3 bg-light" th:each="book : ${books}">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img th:src="@{/image/logo_book.png}" class="card-img" alt="book image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h5 class="d-inline-block" th:text="${book.name}">Card title</h5>
+                        <small class="ml-3 d-inline-block text-muted" th:text="${book.author}"></small>
+                        <span class="badge badge-primary ml-3" th:text="${'NB exemplaire(s): ' + book.availableCopyNumber}">Primary</span>
+                    </div>
+                    <p class="card-text text-justify text-4-line-truncate" th:text="${book.description}"></p>
+                    <a class="btn btn-primary" th:href="@{/books/{id}(id=${book.id})}" role="button">Consulter</a>
+                    <form sec:authorize="isAuthenticated()" class="d-inline-block" th:id="${'loan-btn-' + book.id}" th:unless="${book.availableCopyNumber <= 0}"
+                          th:action="@{/loans/my-loans}" method="POST">
+                        <input class="form-control"
+                               id="bookId" type="hidden" th:value="${book.id}" name="bookId"
+                               required/>
+                        <button class="btn btn-primary" type="submit">
+                            Emprunter
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

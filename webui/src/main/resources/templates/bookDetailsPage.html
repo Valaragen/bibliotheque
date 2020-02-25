@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html th:replace="includes/layouts :: basicLayout(~{::title},~{::main},~{},~{})" lang="fr"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head>
+    <title th:text="${book.name} + ' - Bibliothèque'"></title>
+</head>
+<body>
+<main role="main" class="container">
+    <div class="card my-3 bg-light">
+        <a sec:authorize="hasRole('ROLE_STAFF')" class="btn btn-primary position-absolute top-right-btn" th:href="@{/books/{id}/modify(id = ${book.id})}" role="button">
+            <i class="fas fa-edit mr-1"></i><span>modifier</span>
+        </a>
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img th:src="@{/image/logo_book.png}" class="card-img" alt="book image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body row">
+                    <h5 class="card-title col-12 mb-3" th:text="${book.name}">Card title</h5>
+                    <div class="card-text col-12 mb-2">
+                        <strong class="d-inline">ISBN :</strong>
+                        <p class="d-inline"
+                           th:text="${book.isbn}"></p>
+                    </div>
+                    <div class="card-text col-sm-auto mb-2">
+                        <strong class="d-inline">Auteur :</strong>
+                        <p class="d-inline" th:text="${book.author}"></p>
+                    </div>
+                    <div class="card-text col-sm-auto mb-2">
+                        <strong class="d-inline">Editeur :</strong>
+                        <p class="d-inline" th:text="${book.publisher}"></p>
+                    </div>
+                    <div class="card-text col-12">
+                        <strong class="d-inline">Date de parution :</strong>
+                        <p class="d-inline"
+                           th:text="${#dates.format(book.releaseDate, 'dd/MM/YYYY')}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-md-12">
+                <div class="card-body">
+                    <h5 class="card-title">Description</h5>
+                    <p class="card-text text-justify" th:text="${book.description}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

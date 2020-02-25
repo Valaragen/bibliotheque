@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html th:replace="includes/layouts :: basicLayout(~{::title},~{::main},~{},~{})" lang="fr"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Emprunts - Bibliothèque</title>
+</head>
+<body>
+<main role="main" class="container-fluid mt-1">
+    <h1>Emprunts</h1>
+    <div th:each="loan : ${loans}">
+        <p th:text="${loan.loanStartDate}"></p>
+        <p th:text="${loan.loanEndDate}"></p>
+    </div>
+</main>
+</body>
+</html>
