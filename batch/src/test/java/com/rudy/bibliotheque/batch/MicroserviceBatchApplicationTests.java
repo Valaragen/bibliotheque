@@ -1,13 +1,20 @@
 package com.rudy.bibliotheque.batch;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.Assert.assertTrue;
 
 @SpringBootTest
 class MicroserviceBatchApplicationTests {
 
+	/**
+	 * Rigorous Test :-)
+	 */
 	@Test
-	void contextLoads() {
+	public void shouldAnswerWithTrue()
+	{
+		assertTrue( true );
 	}
 
 }

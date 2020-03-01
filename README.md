@@ -24,7 +24,7 @@ Le projet est **sécurisé** par des appels vers [**keycloak**](https://www.keyc
   **Nom de la base de données** : MBOOK_DB  
   **Port** : 9001  
 * ##### webui  
-  **Site web pour les usagers de la bibliothèque**, permet de **consulter** la liste des livres disponibles à l'emprunt, **effectuer** une demande d'emprunt et de consulter ses emprunts.
+  **Site web pour les usagers de la bibliothèque**, permet de **consulter** la liste des livres disponibles à l'emprunt, **effectuer** une demande d'emprunt et de consulter ses emprunts.  
   **Port** : 9000  
 * ##### batch
   **Service pour les traitements automatisés**, permet d’envoyer des **mails de relance** aux usagers n’ayant pas rendu les livres en fin de période de prêt. L’envoi est automatique à la **fréquence d’un par jour tous les jours à 11h30**.  
@@ -34,12 +34,54 @@ Le projet est **sécurisé** par des appels vers [**keycloak**](https://www.keyc
 ##### Informations complémentaires
 Les appels entre microservices sont gérés avec [OpenFeign](https://spring.io/projects/spring-cloud-openfeign) et son load balancés avec Ribbon, ces deux outils fonctionnent avec Eureka
 #### Keycloak
-Non integré sur ce repository git, keycloak est necessaire au fonctionnement des microservices de la bibliothèque.  
+Non integré sur ce repository git, keycloak est necessaire au fonctionnement des microservices de la bibliothèque. [Télécharger keycloak 8.0.1](https://www.keycloak.org/archive/downloads-8.0.1.html)  
 **Version** : 8.0.1  
 **Base de données** : Postgresql  
 **Nom de la base de données** : KEYCLOAK_DB  
 **Port** : 8080  
    
+## Comment deployer le projet en local ?
+### Prérequis
+1. [Postgresql](https://www.postgresql.org/download/)
+2. [Keycloak 8.0.1](https://www.keycloak.org/archive/downloads-8.0.1.html)
+    1. [Configurer keycloak pour qu'il utilise une base de données potgresql](https://www.keycloak.org/docs/latest/server_installation/#_rdbms-setup-checklist) qui sera nommée **KEYCLOAK_DB**
+### Installation
+1. Télécharger la [dernière dernière release du projet]() et [db_create_keycloak.sql]().
+2. Lancez pgAdmin et créez une nouvelle base de donnée nommée **MBOOK_DB** (Les tables et un jeu de données de base sera inséré automatiquement au premier lancement de la book-api)
+3. Créez une base de données nommée **KEYCLOAK_DB** et insérez-y le script [db_create_keycloak.sql]().  
+4. Lancez dans l'ordre :  
+   1. **Keycloak** en mode standalone **/bin/standalone.bat(widows)** ou **/bin/standalone.sh(linux)**
+   2. **config-server.jar**
+   3. **eureka-server.jar**
+   4. **zuul-server.jar**
+   5. **book-api.jar**
+   6. **webui.jar**  
+   > Ne lancez pas _batch.jar_ pour le moment  
+5. Vous pouvez désormais visiter l'application web à l'url **http://localhost:9000**  
+   > Pour acceder à toutes les fonctionalités de l'application web vous pouvez vous **inscrire** ou vous **connecter** sur le compte utilisateur de test : **nom d'utilisateur:** user **mdp:** Azerty
+6. Vous pouvez vous connecter à la console admin de keycloak via l'url **http://localhost:8080** avec les identifiants -> **nom d'utilisateur:** admin **mdp:** admin
+7. Pour tester le module batch  
+   1. Rendez vous à l'url **http://localhost:8080/auth/realms/bibliotheque/account/**
+   2. Connectez vous à l'application web via **l'utilisateur test** :   
+      **nom d'utilisateur:** user  
+      **mot de passe:** Azerty  
+   3. **Changez l'email** 'user@gmail.com' par l'email sur lequel vous souhaitez recevoir les mails de relance.
+   4. Si ce n'est pas déjà fait, démarrez les services dans l'ordre indiqué à **l'étape 4**.
+   5. Lancez batch.jar
+      > Pour rendre les tests plus simple le module batch envoie les mails de relance à son lancement en plus de l'envoi automatique à 11h30 tous les jours.
+8. Pour tester l'api web  
+   1. Il vous faut **générer un token d'accès** depuis votre outil de test d'api à l'aide de **ces informations**:  
+   **Token name:** keycloak-bearer-token  
+   **Grant type:** Authorization code  
+   **Callback URL:** http://localhost:9000/sso/login  
+   **Auth URL:** http://localhost:8080/auth/realms/bibliotheque/protocol/openid-connect/auth  
+   **Access token URL:** http://localhost:8080/auth/realms/bibliotheque/protocol/openid-connect/token  
+   **Client ID:** webui  
+   **Client secret:** 53ab1cbc-91e0-4699-a587-c4039eb48a12  
+   **Scope:** openid profile email  
+   **State:** 1234  
+   **Client authentication:** Send client credential in body  
+   >  Vous pouvez consulter les différents endpoints accessible via l'url http://localhost:9001/swagger-ui.html#/
    
-   
+
 

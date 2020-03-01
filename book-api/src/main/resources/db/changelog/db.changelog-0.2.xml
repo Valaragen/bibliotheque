@@ -112,11 +112,11 @@ Un essai culte, couronné par le prix Hugo, le prix Locus et le grand prix de l'
         <comment>Add a test user</comment>
         <insert tableName="user_info">
             <column name="version" value="1"/>
-            <column name="id" value="mailtest"/>
-            <column name="username" value="mailtest"/>
-            <column name="email" value="example@gmail.com"/>
-            <column name="first_name" value="mailtest"/>
-            <column name="last_name" value="mailtest"/>
+            <column name="id" value="ed2afb4e-c552-47e9-9fab-48b59cd544b1"/>
+            <column name="username" value="user"/>
+            <column name="email" value="user@gmail.com"/>
+            <column name="first_name" value="useri"/>
+            <column name="last_name" value="usero"/>
         </insert>
     </changeSet>
 
@@ -124,7 +124,7 @@ Un essai culte, couronné par le prix Hugo, le prix Locus et le grand prix de l'
         <comment>Add an expired borrow and a not expired one</comment>
         <insert tableName="borrow">
             <column name="version" value="1"/>
-            <column name="user_info_id" valueComputed="(SELECT id FROM user_info WHERE id='mailtest')"/>
+            <column name="user_info_id" valueComputed="(SELECT id FROM user_info WHERE username='user')"/>
             <column name="loan_request_date" valueDate="2020-01-01"/>
             <column name="deadline_to_retrieve" valueDate="2020-01-02"/>
             <column name="copy_code" valueComputed="(SELECT code FROM copy WHERE code='3642073b9bf67')"/>
@@ -136,7 +136,7 @@ Un essai culte, couronné par le prix Hugo, le prix Locus et le grand prix de l'
 
         <insert tableName="borrow">
             <column name="version" value="1"/>
-            <column name="user_info_id" valueComputed="(SELECT id FROM user_info WHERE id='mailtest')"/>
+            <column name="user_info_id" valueComputed="(SELECT id FROM user_info WHERE username='user')"/>
             <column name="loan_request_date" valueDate="2020-01-01"/>
             <column name="deadline_to_retrieve" valueDate="2020-01-02"/>
             <column name="copy_code" valueComputed="(SELECT code FROM copy WHERE code='364224c4a3c5f')"/>
