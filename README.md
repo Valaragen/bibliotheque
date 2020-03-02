@@ -46,7 +46,7 @@ Non integré sur ce repository git, keycloak est necessaire au fonctionnement de
 2. [Keycloak 8.0.1](https://www.keycloak.org/archive/downloads-8.0.1.html)
     1. [Configurer keycloak pour qu'il utilise une base de données potgresql](https://www.keycloak.org/docs/latest/server_installation/#_rdbms-setup-checklist) qui sera nommée **KEYCLOAK_DB**
 ### Installation
-1. Télécharger la [dernière dernière release du projet]() et [db_create_keycloak.sql]().
+1. Télécharger la [dernière release du projet]() et [db_create_keycloak.sql]().
 2. Lancez pgAdmin et créez une nouvelle base de donnée nommée **MBOOK_DB** (Les tables et un jeu de données de base sera inséré automatiquement au premier lancement de la book-api)
 3. Créez une base de données nommée **KEYCLOAK_DB** et insérez-y le script [db_create_keycloak.sql]().  
 4. Lancez dans l'ordre :  
