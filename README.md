@@ -13,7 +13,7 @@ Le projet est **sécurisé** par des appels vers [**keycloak**](https://www.keyc
   **'Registration server'** , toutes les **instances** des microservices du projet **s'inscrivent** sur ce server à leur lancement. Les microservices passent par ce **registre** pour appeler d'autres microservices.  
   **Port** : 9102  
 * ##### zuul-server
-  **API gateway**, le point d'entrée unique pour les API et microservices back-end(**book-api**)
+  **API gateway**, le point d'entrée unique pour les API et microservices back-end(**book-api**)  
   **Port** : 9104
 #### Microservices de la bibliotheque
 * ##### book-api
@@ -86,5 +86,13 @@ Non integré sur ce repository git, keycloak est necessaire au fonctionnement de
 ## Diagrammes
 ### Base de donnée de l'api
 ![](https://github.com/Valaragen/bibliotheque/blob/master/desc/class_diagram.JPG)  
+
+## Aperçus
+### Page de login
+![](https://github.com/Valaragen/bibliotheque/blob/master/desc/connexion.JPG)  
+### Page de consultation des livres
+![](https://github.com/Valaragen/bibliotheque/blob/master/desc/livres.JPG)  
+### Page de consultation des emprunts
+![](https://github.com/Valaragen/bibliotheque/blob/master/desc/emprunts.JPG)  
 
 
