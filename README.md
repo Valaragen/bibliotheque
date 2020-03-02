@@ -83,7 +83,7 @@ Non integré sur ce repository git, keycloak est necessaire au fonctionnement de
    **Client authentication:** Send client credential in body  
    >  Vous pouvez consulter les différents endpoints accessible via l'url http://localhost:9001/swagger-ui.html#/
    
-## Aperçu
+## Diagrammes
 ### Base de donnée de l'api
 ![](https://github.com/Valaragen/bibliotheque/blob/master/desc/class_diagram.JPG)  
 
